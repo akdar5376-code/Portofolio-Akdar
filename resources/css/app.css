@@ -1,0 +1,372 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../../app/**/*.php';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-sans: var(--font-plus-jakarta-sans), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+        'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+    --shadow-glow-blue: 0 0 40px -8px rgb(99 102 241 / 0.35);
+    --shadow-glow-cyan: 0 0 40px -8px rgb(76 215 246 / 0.3);
+    --shadow-card-dark: 0 20px 40px -15px rgb(2 6 23 / 0.35);
+}
+
+@theme inline {
+    --color-background: var(--pf-background);
+    --color-surface: var(--pf-background);
+    --color-surface-lowest: var(--pf-surface-lowest);
+    --color-surface-low: var(--pf-surface-low);
+    --color-surface-container: var(--pf-surface-container);
+    --color-surface-high: var(--pf-surface-high);
+    --color-surface-highest: var(--pf-surface-highest);
+    --color-on-surface: var(--pf-on-surface);
+    --color-on-surface-variant: var(--pf-on-surface-variant);
+    --color-heading: var(--pf-heading);
+    --color-primary: var(--pf-primary);
+    --color-primary-container: var(--pf-primary-container);
+    --color-secondary: var(--pf-secondary);
+    --color-tertiary: var(--pf-tertiary);
+    --color-outline: var(--pf-outline);
+    --color-outline-variant: var(--pf-outline-variant);
+}
+
+:root {
+    color-scheme: light;
+
+    --pf-background: #f5f7fb;
+    --pf-surface-lowest: #ffffff;
+    --pf-surface-low: #ffffff;
+    --pf-surface-container: #f1f5f9;
+    --pf-surface-high: #e2e8f0;
+    --pf-surface-highest: #cbd5e1;
+    --pf-on-surface: #1e293b;
+    --pf-on-surface-variant: #475569;
+    --pf-heading: #0f172a;
+    --pf-primary: #4f46e5;
+    --pf-primary-container: #4f52e2;
+    --pf-secondary: #7c3aed;
+    --pf-tertiary: #0891b2;
+    --pf-outline: #64748b;
+    --pf-outline-variant: #cbd5e1;
+    --pf-hero-1: #eef2ff;
+    --pf-hero-2: #f5f7fb;
+    --pf-hero-3: #ffffff;
+    --pf-grid-line: rgb(15 23 42 / 0.05);
+    --pf-scroll-track: #e2e8f0;
+    --pf-scroll-thumb: #cbd5e1;
+}
+
+.dark {
+    color-scheme: dark;
+
+    --pf-background: #0b1326;
+    --pf-surface-lowest: #060e20;
+    --pf-surface-low: #131b2e;
+    --pf-surface-container: #171f33;
+    --pf-surface-high: #222a3d;
+    --pf-surface-highest: #2d3449;
+    --pf-on-surface: #dae2fd;
+    --pf-on-surface-variant: #c7c4d7;
+    --pf-heading: #ffffff;
+    --pf-primary: #c0c1ff;
+    --pf-primary-container: #4f52e2;
+    --pf-secondary: #d0bcff;
+    --pf-tertiary: #4cd7f6;
+    --pf-outline: #908fa0;
+    --pf-outline-variant: #464554;
+    --pf-hero-1: #171f38;
+    --pf-hero-2: #0b1326;
+    --pf-hero-3: #060e20;
+    --pf-grid-line: rgb(255 255 255 / 0.035);
+    --pf-scroll-track: #0b1326;
+    --pf-scroll-thumb: #2d3449;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: var(--font-sans);
+    }
+
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--pf-scroll-track);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--pf-scroll-thumb);
+        border-radius: 9999px;
+    }
+
+    :focus-visible {
+        outline: 2px solid var(--pf-primary);
+        outline-offset: 2px;
+    }
+}
+
+@utility grid-pattern {
+    background-size: 36px 36px;
+    background-image:
+        linear-gradient(to right, var(--pf-grid-line) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--pf-grid-line) 1px, transparent 1px);
+}
+
+@utility hero-gradient {
+    background: radial-gradient(circle at 50% 20%, var(--pf-hero-1) 0%, var(--pf-hero-2) 65%, var(--pf-hero-3) 100%);
+}
+
+@layer components {
+    .blog-content {
+        color: var(--pf-on-surface-variant);
+        font-size: 0.9375rem;
+        line-height: 1.85;
+    }
+
+    .blog-content > * + * {
+        margin-top: 1.15rem;
+    }
+
+    .blog-content h1,
+    .blog-content h2,
+    .blog-content h3,
+    .blog-content h4 {
+        color: var(--pf-heading);
+        font-weight: 800;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+    }
+
+    .blog-content h1 {
+        margin-top: 2.25rem;
+        font-size: 1.75rem;
+    }
+
+    .blog-content h2 {
+        margin-top: 2rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--pf-surface-highest);
+        font-size: 1.375rem;
+    }
+
+    .blog-content h3 {
+        margin-top: 1.75rem;
+        font-size: 1.125rem;
+    }
+
+    .blog-content strong {
+        color: var(--pf-heading);
+        font-weight: 700;
+    }
+
+    .blog-content a {
+        color: #2563eb;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+    }
+
+    .dark .blog-content a {
+        color: #60a5fa;
+    }
+
+    .blog-content ul,
+    .blog-content ol {
+        padding-left: 1.35rem;
+    }
+
+    .blog-content ul {
+        list-style: disc;
+    }
+
+    .blog-content ol {
+        list-style: decimal;
+    }
+
+    .blog-content li {
+        margin-top: 0.35rem;
+        padding-left: 0.15rem;
+    }
+
+    .blog-content li::marker {
+        color: #3b82f6;
+    }
+
+    .blog-content blockquote {
+        border-left: 3px solid #3b82f6;
+        border-radius: 0 0.75rem 0.75rem 0;
+        background: var(--pf-surface-container);
+        padding: 0.85rem 1.15rem;
+        font-style: italic;
+    }
+
+    .blog-content code {
+        border: 1px solid var(--pf-surface-highest);
+        border-radius: 0.375rem;
+        background: var(--pf-surface-container);
+        padding: 0.1rem 0.35rem;
+        color: var(--pf-heading);
+        font-family: var(--font-mono);
+        font-size: 0.85em;
+    }
+
+    .blog-content pre {
+        overflow-x: auto;
+        border: 1px solid var(--pf-surface-highest);
+        border-radius: 0.75rem;
+        background: #0b1326;
+        padding: 1rem 1.15rem;
+        color: #dae2fd;
+        font-size: 0.8rem;
+        line-height: 1.7;
+    }
+
+    .blog-content pre code {
+        border: 0;
+        background: transparent;
+        padding: 0;
+        color: inherit;
+        font-size: inherit;
+    }
+
+    .blog-content img {
+        border: 1px solid var(--pf-surface-highest);
+        border-radius: 0.75rem;
+    }
+
+    .blog-content hr {
+        border-color: var(--pf-surface-highest);
+    }
+
+    .blog-content table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+    }
+
+    .blog-content th,
+    .blog-content td {
+        border: 1px solid var(--pf-surface-highest);
+        padding: 0.5rem 0.75rem;
+        text-align: left;
+    }
+
+    .blog-content th {
+        background: var(--pf-surface-container);
+        color: var(--pf-heading);
+    }
+}
+
+@keyframes page-enter {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes grow-bar {
+    from {
+        width: 0;
+    }
+    to {
+        width: var(--bar-target, 0%);
+    }
+}
+
+@keyframes float-slow {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.page-transition {
+    animation: page-enter 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.skill-bar-fill {
+    width: 0;
+    animation: grow-bar 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.float-slow {
+    animation: float-slow 7s ease-in-out infinite;
+}
+
+[data-back-to-top] {
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
+}
+
+[data-back-to-top][data-hidden='true'] {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+}
+
+[data-project-preview-modal][aria-hidden='true'] {
+    opacity: 0;
+    visibility: hidden;
+}
+
+[data-project-preview-modal] {
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .page-transition,
+    .skill-bar-fill,
+    .float-slow {
+        animation: none;
+        width: var(--bar-target, 100%);
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+@media print {
+    header,
+    footer,
+    [data-back-to-top],
+    .no-print {
+        display: none !important;
+    }
+
+    body {
+        background: #ffffff !important;
+        color: #111827 !important;
+    }
+
+    .print-card {
+        break-inside: avoid;
+        border-color: #e5e7eb !important;
+        box-shadow: none !important;
+    }
+
+    main {
+        padding: 0 !important;
+    }
+}
