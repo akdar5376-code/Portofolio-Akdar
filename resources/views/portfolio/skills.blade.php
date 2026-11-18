@@ -12,9 +12,9 @@
 
     <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
         <div class="grid gap-6 lg:grid-cols-2">
-            <div class="rounded-2xl border border-surface-highest bg-surface-low p-6 shadow-card-dark sm:p-8">
+            <div class="border-y border-surface-highest bg-surface-low p-6 sm:p-8">
                 <div class="mb-6 flex items-center gap-3">
-                    <span class="flex size-11 items-center justify-center rounded-xl border border-blue-500/30 bg-blue-500/10 text-blue-600 dark:text-blue-300">
+                    <span class="flex size-11 items-center justify-center rounded-xl border border-orange-500/30 bg-orange-500/10 text-orange-600 dark:text-orange-300">
                         <x-icon name="terminal" class="size-5" />
                     </span>
                     <div>
@@ -33,9 +33,9 @@
                 </div>
             </div>
 
-            <div class="rounded-2xl border border-surface-highest bg-surface-low p-6 shadow-card-dark sm:p-8">
+            <div class="border-y border-surface-highest bg-surface-low p-6 sm:p-8">
                 <div class="mb-6 flex items-center gap-3">
-                    <span class="flex size-11 items-center justify-center rounded-xl border border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-300">
+                    <span class="flex size-11 items-center justify-center rounded-xl border border-amber-500/30 bg-amber-500/10 text-amber-600 dark:text-amber-300">
                         <x-icon name="users" class="size-5" />
                     </span>
                     <div>
@@ -53,15 +53,6 @@
                     @endforelse
                 </div>
             </div>
-        </div>
-
-        <div class="mt-6 rounded-2xl border border-surface-highest bg-gradient-to-r from-blue-600/10 via-transparent to-cyan-500/10 p-6 text-center sm:p-8">
-            <h2 class="text-lg font-bold text-heading">Ingin melihat keahlian ini diterapkan secara nyata?</h2>
-            <p class="mx-auto mt-2 max-w-xl text-sm text-on-surface-variant">Lihat bagaimana kemampuan teknis dan non-teknis saya digunakan dalam proyek-proyek yang sudah saya kerjakan.</p>
-            <a href="{{ route('projects.index') }}" class="mt-5 inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/25 transition-colors hover:bg-blue-500">
-                Lihat Galeri Proyek
-                <x-icon name="arrow-right" class="size-4" />
-            </a>
         </div>
     </section>
 @endsection

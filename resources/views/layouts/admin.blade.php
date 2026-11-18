@@ -11,11 +11,7 @@
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="relative flex min-h-screen flex-col bg-background font-sans text-on-surface antialiased selection:bg-indigo-500 selection:text-white">
-        <div class="grid-pattern pointer-events-none fixed inset-0 opacity-60"></div>
-        <div class="pointer-events-none fixed left-1/4 top-12 size-[500px] rounded-full bg-indigo-600/10 blur-[140px]"></div>
-        <div class="pointer-events-none fixed bottom-10 right-1/4 size-[450px] rounded-full bg-cyan-500/10 blur-[130px]"></div>
-
+    <body class="admin-theme flex min-h-screen flex-col bg-background font-sans text-on-surface antialiased selection:bg-orange-800 selection:text-white">
         @yield('body')
     </body>
 </html>

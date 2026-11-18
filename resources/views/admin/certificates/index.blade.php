@@ -10,7 +10,7 @@
             <p class="mt-1 text-sm text-on-surface-variant">Tambah, ubah, dan hapus sertifikat beserta dokumentasinya.</p>
         </div>
         @if ($editing)
-            <a href="{{ route('admin.certificates.index') }}" class="flex items-center justify-center gap-2 rounded-full border border-surface-highest bg-surface-low px-4 py-2.5 text-xs font-semibold text-on-surface transition-colors hover:border-blue-500/40">
+            <a href="{{ route('admin.certificates.index') }}" class="flex items-center justify-center gap-2 rounded-full border border-surface-highest bg-surface-low px-4 py-2.5 text-xs font-semibold text-on-surface transition-colors hover:border-orange-500/40">
                 <x-icon name="plus" class="size-4" />
                 Tambah Sertifikat Baru
             </a>
@@ -18,10 +18,10 @@
     </div>
 
     <div class="grid items-start gap-6 xl:grid-cols-[minmax(0,420px)_1fr]">
-        <section class="rounded-2xl border border-surface-highest bg-surface-low p-5 shadow-card-dark sm:p-6">
+        <section class="rounded-lg border border-surface-highest bg-surface-low p-5 shadow-sm sm:p-6">
             <div class="mb-5 border-b border-surface-highest pb-4">
                 <h2 class="flex items-center gap-2 text-base font-bold text-heading">
-                    <x-icon :name="$editing ? 'edit' : 'plus-circle'" class="size-4 text-blue-500" />
+                    <x-icon :name="$editing ? 'edit' : 'plus-circle'" class="size-4 text-orange-500" />
                     {{ $editing ? 'Edit Sertifikat' : 'Tambah Sertifikat' }}
                 </h2>
                 <p class="mt-1 text-xs text-on-surface-variant">Unggah gambar dokumentasi bila tersedia.</p>
@@ -54,10 +54,10 @@
                         <span>Dokumentasi Sertifikat</span>
                         <span class="font-mono text-[10px] font-normal text-outline">JPG, PNG, WEBP • maks 4MB</span>
                     </label>
-                    <label for="image" class="flex cursor-pointer flex-col items-center justify-center gap-1.5 rounded-xl border border-dashed border-surface-highest bg-background px-3 py-5 text-center transition-colors hover:border-blue-500/60">
+                    <label for="image" class="flex cursor-pointer flex-col items-center justify-center gap-1.5 rounded-xl border border-dashed border-surface-highest bg-background px-3 py-5 text-center transition-colors hover:border-orange-500/60">
                         <x-icon name="upload" class="size-6 text-outline" />
                         <span class="text-xs font-medium text-on-surface-variant">Pilih gambar dokumentasi</span>
-                        <span id="certificate-filename" class="font-mono text-[10px] text-blue-500">{{ $editing?->image_path ? 'Kosongkan untuk mempertahankan gambar' : 'Belum ada file dipilih' }}</span>
+                        <span id="certificate-filename" class="font-mono text-[10px] text-orange-500">{{ $editing?->image_path ? 'Kosongkan untuk mempertahankan gambar' : 'Belum ada file dipilih' }}</span>
                         <input id="image" name="image" type="file" accept="image/jpeg,image/png,image/webp" data-filename-target="#certificate-filename" class="sr-only">
                     </label>
                     @error('image')
@@ -77,7 +77,7 @@
                 </div>
 
                 <div class="flex items-center gap-2 pt-1">
-                    <button type="submit" class="flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-600/25 transition-all hover:from-blue-500 hover:to-indigo-500">
+                    <button type="submit" class="flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-xl bg-orange-800 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-600/25 transition-all hover:from-orange-500 hover:to-orange-500">
                         <x-icon :name="$editing ? 'check-circle' : 'plus-circle'" class="size-4" />
                         {{ $editing ? 'Simpan Perubahan' : 'Tambah Sertifikat' }}
                     </button>
@@ -91,7 +91,7 @@
             </form>
         </section>
 
-        <section class="rounded-2xl border border-surface-highest bg-surface-low p-5 shadow-card-dark sm:p-6">
+        <section class="rounded-lg border border-surface-highest bg-surface-low p-5 shadow-sm sm:p-6">
             <div class="mb-4 flex items-center justify-between">
                 <h2 class="flex items-center gap-2 text-base font-bold text-heading">
                     <x-icon name="award" class="size-4 text-amber-500" />
@@ -106,7 +106,7 @@
                         @if ($certificate->image_url)
                             <img src="{{ $certificate->image_url }}" alt="{{ $certificate->title }}" class="h-16 w-20 shrink-0 rounded-lg border border-surface-highest object-cover">
                         @else
-                            <div class="flex h-16 w-20 shrink-0 items-center justify-center rounded-lg border border-blue-500/30 bg-blue-500/10 text-blue-500 dark:text-blue-300">
+                            <div class="flex h-16 w-20 shrink-0 items-center justify-center rounded-lg border border-orange-500/30 bg-orange-500/10 text-orange-500 dark:text-orange-300">
                                 <x-icon name="award" class="size-6" />
                             </div>
                         @endif

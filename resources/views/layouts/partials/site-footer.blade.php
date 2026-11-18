@@ -2,10 +2,10 @@
     <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-3 lg:px-8">
         <div>
             <a class="mb-4 flex items-center gap-2.5" href="{{ route('home') }}">
-                <div class="flex size-8 items-center justify-center rounded-lg border border-blue-500/40 bg-blue-600/10">
-                    <span class="font-mono text-xs font-bold text-blue-600 dark:text-blue-400">D</span>
+                <div class="flex size-8 items-center justify-center border border-orange-700/40 bg-orange-700/10">
+                    <span class="font-mono text-xs font-bold text-orange-800 dark:text-orange-300">D</span>
                 </div>
-                <span class="text-base font-extrabold tracking-tight text-heading">Dar<span class="text-blue-600 dark:text-blue-400">Folio</span></span>
+                <span class="text-base font-extrabold tracking-tight text-heading">Dar<span class="text-orange-800 dark:text-orange-300">Folio</span></span>
             </a>
             <p class="max-w-xs text-sm leading-relaxed text-on-surface-variant">
                 {{ $siteProfile->tagline ?: 'Portofolio digital siswa SMKN 2 Banjarmasin.' }}
@@ -17,7 +17,7 @@
                         <a
                             href="{{ $social['url'] }}"
                             @if (! str_starts_with($social['url'], 'mailto:')) target="_blank" rel="noopener noreferrer" @endif
-                            class="flex size-9 items-center justify-center rounded-full border border-surface-highest bg-surface-low text-on-surface-variant transition-colors hover:border-blue-500/40 hover:text-blue-600 dark:hover:text-blue-300"
+                            class="flex size-9 items-center justify-center rounded-full border border-surface-highest bg-surface-low text-on-surface-variant transition-colors hover:border-orange-700 hover:text-orange-800 dark:hover:text-orange-300"
                             aria-label="{{ $social['label'] }}"
                         >
                             <x-icon :name="$social['icon']" class="size-4" />
@@ -44,8 +44,8 @@
             <ul class="space-y-2.5 text-sm text-on-surface-variant">
                 @if ($siteProfile->email)
                     <li class="flex items-center gap-2">
-                        <x-icon name="mail" class="size-4 shrink-0 text-blue-500" />
-                        <a href="mailto:{{ $siteProfile->email }}" class="hover:text-blue-600 dark:hover:text-blue-300">{{ $siteProfile->email }}</a>
+                        <x-icon name="mail" class="size-4 shrink-0 text-orange-800 dark:text-orange-300" />
+                        <a href="mailto:{{ $siteProfile->email }}" class="hover:text-orange-800 dark:hover:text-orange-300">{{ $siteProfile->email }}</a>
                     </li>
                 @endif
                 @foreach ([
@@ -55,8 +55,8 @@
                 ] as $contact)
                     @if ($contact['url'])
                         <li class="flex items-center gap-2">
-                            <x-icon :name="$contact['icon']" class="size-4 shrink-0 text-blue-500" />
-                            <a href="{{ $contact['url'] }}" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 dark:hover:text-blue-300">{{ $contact['label'] }}</a>
+                            <x-icon :name="$contact['icon']" class="size-4 shrink-0 text-orange-800 dark:text-orange-300" />
+                            <a href="{{ $contact['url'] }}" target="_blank" rel="noopener noreferrer" class="hover:text-orange-800 dark:hover:text-orange-300">{{ $contact['label'] }}</a>
                         </li>
                     @endif
                 @endforeach

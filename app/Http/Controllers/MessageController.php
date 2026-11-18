@@ -12,7 +12,7 @@ class MessageController extends Controller
     {
         Message::query()->create($request->validated());
 
-        return back()
+        return redirect()->route('home')
             ->with('status', 'Terima kasih! Pesan dan kesan kamu sudah terkirim.')
             ->with('status_title', 'Pesan Terkirim');
     }

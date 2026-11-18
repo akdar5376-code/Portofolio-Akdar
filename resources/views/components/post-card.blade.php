@@ -8,7 +8,7 @@
 @endphp
 
 <article
-    {{ $attributes->merge(['class' => 'group flex flex-col overflow-hidden rounded-2xl border border-surface-highest bg-surface-low shadow-card-dark transition-all duration-300 hover:-translate-y-1.5 '.$accent['hover']]) }}
+    {{ $attributes->merge(['class' => 'group flex flex-col overflow-hidden border-y border-surface-highest bg-surface-low transition-colors '.$accent['hover']]) }}
     data-purpose="post-card"
 >
     <a href="{{ route('posts.show', $post) }}" class="relative block aspect-video w-full overflow-hidden bg-surface-container">
@@ -18,7 +18,6 @@
             loading="lazy"
             class="h-full w-full object-cover transition-all duration-700 ease-out group-hover:scale-105"
         >
-        <div class="absolute inset-0 bg-gradient-to-t from-surface-lowest/80 via-transparent to-transparent opacity-70"></div>
 
         <div class="absolute left-4 top-4">
             <span class="inline-flex items-center gap-1.5 rounded-full border bg-surface-lowest/95 px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-wider shadow-md backdrop-blur-md {{ $accent['badge'] }}">
@@ -64,7 +63,7 @@
             </span>
             <a
                 href="{{ route('posts.show', $post) }}"
-                class="flex items-center gap-1 rounded-full bg-blue-600/10 px-3 py-1.5 text-xs font-semibold text-blue-600 transition-colors hover:bg-blue-600 hover:text-white dark:text-blue-300 dark:hover:text-white"
+                class="flex items-center gap-1 bg-orange-800/10 px-3 py-1.5 text-xs font-semibold text-orange-900 transition-colors hover:bg-orange-800 hover:text-white dark:text-orange-300 dark:hover:bg-orange-300 dark:hover:text-stone-950"
             >
                 Baca
                 <x-icon name="arrow-right" class="size-3.5" />

@@ -17,7 +17,7 @@
         @if ($required) required @endif
         {{ $attributes }}
         @class([
-            'w-full rounded-xl border bg-background px-3.5 py-2.5 text-sm text-on-surface outline-none transition-colors focus:border-blue-500',
+            'w-full rounded-xl border bg-background px-3.5 py-2.5 text-sm text-on-surface outline-none transition-colors focus:border-orange-500',
             'border-red-500/60' => $errors->has($name),
             'border-surface-highest' => ! $errors->has($name),
         ])

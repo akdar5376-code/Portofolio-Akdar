@@ -14,9 +14,9 @@
         @method('PUT')
 
         <div class="space-y-6">
-            <section class="rounded-2xl border border-surface-highest bg-surface-low p-5 shadow-card-dark sm:p-6">
+            <section class="rounded-lg border border-surface-highest bg-surface-low p-5 shadow-sm sm:p-6">
                 <h3 class="mb-4 flex items-center gap-2 border-b border-surface-highest pb-3 text-base font-bold text-heading">
-                    <x-icon name="user" class="size-4 text-blue-500" />
+                    <x-icon name="user" class="size-4 text-orange-500" />
                     Identitas
                 </h3>
                 <div class="grid gap-4 sm:grid-cols-2">
@@ -30,9 +30,9 @@
                 </div>
             </section>
 
-            <section class="rounded-2xl border border-surface-highest bg-surface-low p-5 shadow-card-dark sm:p-6">
+            <section class="rounded-lg border border-surface-highest bg-surface-low p-5 shadow-sm sm:p-6">
                 <h3 class="mb-4 flex items-center gap-2 border-b border-surface-highest pb-3 text-base font-bold text-heading">
-                    <x-icon name="file-text" class="size-4 text-indigo-500" />
+                    <x-icon name="file-text" class="size-4 text-orange-500" />
                     Deskripsi &amp; Tujuan
                 </h3>
                 <div class="space-y-4">
@@ -44,7 +44,7 @@
         </div>
 
         <aside class="space-y-6">
-            <section class="rounded-2xl border border-surface-highest bg-surface-low p-5 shadow-card-dark">
+            <section class="rounded-lg border border-surface-highest bg-surface-low p-5 shadow-sm">
                 <h3 class="mb-4 text-sm font-bold text-heading">Foto Profil</h3>
                 <div class="overflow-hidden rounded-xl border border-surface-highest bg-surface-container">
                     @if ($profile->avatar_url)
@@ -56,9 +56,9 @@
                     @endif
                 </div>
 
-                <label for="avatar" class="mt-3 flex cursor-pointer items-center justify-center gap-2 rounded-xl border border-dashed border-surface-highest bg-background px-3 py-3 text-center transition-colors hover:border-blue-500/60">
+                <label for="avatar" class="mt-3 flex cursor-pointer items-center justify-center gap-2 rounded-xl border border-dashed border-surface-highest bg-background px-3 py-3 text-center transition-colors hover:border-orange-500/60">
                     <x-icon name="upload" class="size-4 text-outline" />
-                    <span id="avatar-filename" class="font-mono text-[10px] text-blue-500">Pilih foto JPG, PNG, atau WEBP (maks. 4 MB)</span>
+                    <span id="avatar-filename" class="font-mono text-[10px] text-orange-500">Pilih foto JPG, PNG, atau WEBP (maks. 4 MB)</span>
                     <input id="avatar" name="avatar" type="file" accept="image/jpeg,image/png,image/webp" data-filename-target="#avatar-filename" class="sr-only">
                 </label>
                 @error('avatar')
@@ -73,21 +73,21 @@
                 @endif
             </section>
 
-            <section class="rounded-2xl border border-surface-highest bg-surface-low p-5 shadow-card-dark">
+            <section class="rounded-lg border border-surface-highest bg-surface-low p-5 shadow-sm">
                 <h3 class="mb-4 text-sm font-bold text-heading">File CV (PDF)</h3>
                 @if ($profile->cv_path)
                     <div class="mb-3 flex items-center gap-2 rounded-xl border border-surface-highest bg-surface-container/50 p-3">
-                        <x-icon name="file-text" class="size-5 text-blue-500" />
+                        <x-icon name="file-text" class="size-5 text-orange-500" />
                         <span class="min-w-0 flex-grow truncate font-mono text-[10px] text-on-surface-variant">{{ basename($profile->cv_path) }}</span>
-                        <a href="{{ $profile->cv_url }}" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-300">
+                        <a href="{{ $profile->cv_url }}" target="_blank" rel="noopener noreferrer" class="text-orange-600 dark:text-orange-300">
                             <x-icon name="external-link" class="size-4" />
                         </a>
                     </div>
                 @endif
 
-                <label for="cv" class="flex cursor-pointer items-center justify-center gap-2 rounded-xl border border-dashed border-surface-highest bg-background px-3 py-3 text-center transition-colors hover:border-blue-500/60">
+                <label for="cv" class="flex cursor-pointer items-center justify-center gap-2 rounded-xl border border-dashed border-surface-highest bg-background px-3 py-3 text-center transition-colors hover:border-orange-500/60">
                     <x-icon name="upload" class="size-4 text-outline" />
-                    <span id="cv-filename" class="font-mono text-[10px] text-blue-500">Pilih file PDF (maks 8MB)</span>
+                    <span id="cv-filename" class="font-mono text-[10px] text-orange-500">Pilih file PDF (maks 8MB)</span>
                     <input id="cv" name="cv" type="file" accept="application/pdf" data-filename-target="#cv-filename" class="sr-only">
                 </label>
                 @error('cv')
@@ -102,9 +102,9 @@
                 @endif
             </section>
 
-            <section class="rounded-2xl border border-surface-highest bg-surface-low p-5 shadow-card-dark">
+            <section class="rounded-lg border border-surface-highest bg-surface-low p-5 shadow-sm">
                 <h3 class="mb-4 flex items-center gap-2 border-b border-surface-highest pb-3 text-sm font-bold text-heading">
-                    <x-icon name="mail" class="size-4 text-emerald-500" />
+                    <x-icon name="mail" class="size-4 text-amber-500" />
                     Kontak &amp; Media Sosial
                 </h3>
                 <div class="space-y-4">
@@ -115,7 +115,7 @@
                 </div>
             </section>
 
-            <button type="submit" class="flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-600/25 transition-all hover:from-blue-500 hover:to-indigo-500">
+            <button type="submit" class="flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-orange-800 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-600/25 transition-all hover:from-orange-500 hover:to-orange-500">
                 <x-icon name="check-circle" class="size-4" />
                 Simpan Profil
             </button>

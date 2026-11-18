@@ -20,10 +20,10 @@
                     name="q"
                     value="{{ $search }}"
                     placeholder="Cari proyek atau teknologi..."
-                    class="w-full rounded-full border border-surface-highest bg-surface-low py-2.5 pl-10 pr-4 text-sm text-on-surface outline-none transition-colors placeholder:text-outline focus:border-blue-500"
+                    class="w-full rounded-full border border-surface-highest bg-surface-low py-2.5 pl-10 pr-4 text-sm text-on-surface outline-none transition-colors placeholder:text-outline focus:border-orange-500"
                 >
             </div>
-            <button type="submit" class="rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-500">Cari</button>
+            <button type="submit" class="rounded-full bg-orange-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-orange-500">Cari</button>
         </form>
     </x-page-header>
 
@@ -33,7 +33,7 @@
                 href="{{ route('projects.index', $search !== '' ? ['q' => $search] : []) }}"
                 @class([
                     'rounded-full border px-4 py-2 text-xs font-semibold transition-colors',
-                    'border-blue-500/40 bg-blue-600 text-white shadow-md shadow-blue-600/20' => $activeCategory === null,
+                    'border-orange-500/40 bg-orange-600 text-white shadow-md shadow-orange-600/20' => $activeCategory === null,
                     'border-surface-highest bg-surface-low text-on-surface-variant hover:text-heading' => $activeCategory !== null,
                 ])
             >Semua</a>
@@ -42,7 +42,7 @@
                     href="{{ route('projects.index', array_filter(['category' => $category, 'q' => $search])) }}"
                     @class([
                         'rounded-full border px-4 py-2 text-xs font-semibold transition-colors',
-                        'border-blue-500/40 bg-blue-600 text-white shadow-md shadow-blue-600/20' => $activeCategory === $category,
+                        'border-orange-500/40 bg-orange-600 text-white shadow-md shadow-orange-600/20' => $activeCategory === $category,
                         'border-surface-highest bg-surface-low text-on-surface-variant hover:text-heading' => $activeCategory !== $category,
                     ])
                 >{{ \App\Enums\ProjectCategory::tryFrom($category)?->label() ?? $category }}</a>
@@ -51,14 +51,14 @@
 
         @if ($projects->isEmpty())
             <div class="rounded-3xl border border-surface-highest bg-surface-low py-20 text-center">
-                <div class="mx-auto mb-4 flex size-16 items-center justify-center rounded-2xl border border-surface-highest bg-surface-high text-blue-500">
+                <div class="mx-auto mb-4 flex size-16 items-center justify-center rounded-lg border border-surface-highest bg-surface-high text-orange-500">
                     <x-icon name="folder-off" class="size-8" />
                 </div>
                 <p class="text-base font-semibold text-heading">Tidak ada proyek yang sesuai kategori ini.</p>
                 <p class="mt-1 text-xs text-on-surface-variant">
                     {{ $search !== '' ? 'Coba kata kunci lain atau ubah filter kategori.' : 'Silakan pilih kategori lain.' }}
                 </p>
-                <a href="{{ route('projects.index') }}" class="mt-5 inline-flex items-center gap-1.5 rounded-full bg-blue-600 px-4 py-2 text-xs font-semibold text-white">Reset filter</a>
+                <a href="{{ route('projects.index') }}" class="mt-5 inline-flex items-center gap-1.5 rounded-full bg-orange-600 px-4 py-2 text-xs font-semibold text-white">Reset filter</a>
             </div>
         @else
             <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">

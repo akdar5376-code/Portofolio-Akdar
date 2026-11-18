@@ -42,14 +42,14 @@ enum ExperienceType: string
     {
         return match ($this) {
             self::Plk => [
-                'badge' => 'border-blue-500/30 bg-blue-500/10 text-blue-600 dark:text-blue-300',
-                'icon' => 'border-blue-500/30 bg-blue-500/10 text-blue-600 dark:text-blue-400',
-                'dot' => 'bg-blue-500',
+                'badge' => 'border-orange-500/30 bg-orange-500/10 text-orange-600 dark:text-orange-300',
+                'icon' => 'border-orange-500/30 bg-orange-500/10 text-orange-600 dark:text-orange-400',
+                'dot' => 'bg-orange-500',
             ],
             self::Organization => [
-                'badge' => 'border-indigo-500/30 bg-indigo-500/10 text-indigo-600 dark:text-indigo-300',
-                'icon' => 'border-indigo-500/30 bg-indigo-500/10 text-indigo-600 dark:text-indigo-400',
-                'dot' => 'bg-indigo-500',
+                'badge' => 'border-stone-500/30 bg-stone-500/10 text-stone-600 dark:text-stone-300',
+                'icon' => 'border-stone-500/30 bg-stone-500/10 text-stone-600 dark:text-stone-400',
+                'dot' => 'bg-stone-500',
             ],
             self::Competition => [
                 'badge' => 'border-amber-500/30 bg-amber-500/10 text-amber-600 dark:text-amber-300',

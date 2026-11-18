@@ -123,7 +123,6 @@ class PortfolioController extends Controller
         return view('portfolio.testimonies', [
             'profile' => Profile::current(),
             'roles' => TestimonyRole::cases(),
-            'testimonies' => Testimony::query()->visible()->ordered()->get(),
         ]);
     }
 

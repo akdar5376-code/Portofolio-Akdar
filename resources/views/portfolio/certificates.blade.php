@@ -13,7 +13,7 @@
     <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         @if ($certificates->isEmpty())
             <div class="rounded-3xl border border-surface-highest bg-surface-low py-20 text-center">
-                <div class="mx-auto mb-4 flex size-16 items-center justify-center rounded-2xl border border-surface-highest bg-surface-high text-blue-500">
+                <div class="mx-auto mb-4 flex size-16 items-center justify-center rounded-lg border border-surface-highest bg-surface-high text-orange-500">
                     <x-icon name="award" class="size-8" />
                 </div>
                 <p class="text-base font-semibold text-heading">Belum ada sertifikat yang ditampilkan.</p>

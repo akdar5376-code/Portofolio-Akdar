@@ -6,10 +6,10 @@
             'route' => 'home',
             'active' => 'home',
             'accent' => [
-                'dot' => 'bg-indigo-500',
-                'text' => 'text-indigo-700 dark:text-indigo-300',
-                'hover' => 'hover:bg-indigo-500/10 hover:text-indigo-700 dark:hover:text-indigo-300',
-                'active' => 'bg-indigo-500/15 text-indigo-700 ring-1 ring-inset ring-indigo-500/30 dark:text-indigo-300',
+                'dot' => 'bg-orange-700',
+                'text' => 'text-orange-800 dark:text-orange-300',
+                'hover' => 'hover:bg-orange-700/10 hover:text-orange-800 dark:hover:text-orange-300',
+                'active' => 'bg-orange-700/15 text-orange-900 ring-1 ring-inset ring-orange-700/30 dark:text-orange-300',
             ],
         ],
         [
@@ -17,10 +17,10 @@
             'route' => 'about',
             'active' => 'about',
             'accent' => [
-                'dot' => 'bg-indigo-500',
-                'text' => 'text-indigo-700 dark:text-indigo-300',
-                'hover' => 'hover:bg-indigo-500/10 hover:text-indigo-700 dark:hover:text-indigo-300',
-                'active' => 'bg-indigo-500/15 text-indigo-700 ring-1 ring-inset ring-indigo-500/30 dark:text-indigo-300',
+                'dot' => 'bg-orange-700',
+                'text' => 'text-orange-800 dark:text-orange-300',
+                'hover' => 'hover:bg-orange-700/10 hover:text-orange-800 dark:hover:text-orange-300',
+                'active' => 'bg-orange-700/15 text-orange-900 ring-1 ring-inset ring-orange-700/30 dark:text-orange-300',
             ],
         ],
         [
@@ -28,10 +28,10 @@
             'route' => 'skills',
             'active' => 'skills',
             'accent' => [
-                'dot' => 'bg-indigo-500',
-                'text' => 'text-indigo-700 dark:text-indigo-300',
-                'hover' => 'hover:bg-indigo-500/10 hover:text-indigo-700 dark:hover:text-indigo-300',
-                'active' => 'bg-indigo-500/15 text-indigo-700 ring-1 ring-inset ring-indigo-500/30 dark:text-indigo-300',
+                'dot' => 'bg-orange-700',
+                'text' => 'text-orange-800 dark:text-orange-300',
+                'hover' => 'hover:bg-orange-700/10 hover:text-orange-800 dark:hover:text-orange-300',
+                'active' => 'bg-orange-700/15 text-orange-900 ring-1 ring-inset ring-orange-700/30 dark:text-orange-300',
             ],
         ],
         [
@@ -39,10 +39,10 @@
             'route' => 'projects.index',
             'active' => 'projects.*',
             'accent' => [
-                'dot' => 'bg-indigo-500',
-                'text' => 'text-indigo-700 dark:text-indigo-300',
-                'hover' => 'hover:bg-indigo-500/10 hover:text-indigo-700 dark:hover:text-indigo-300',
-                'active' => 'bg-indigo-500/15 text-indigo-700 ring-1 ring-inset ring-indigo-500/30 dark:text-indigo-300',
+                'dot' => 'bg-orange-700',
+                'text' => 'text-orange-800 dark:text-orange-300',
+                'hover' => 'hover:bg-orange-700/10 hover:text-orange-800 dark:hover:text-orange-300',
+                'active' => 'bg-orange-700/15 text-orange-900 ring-1 ring-inset ring-orange-700/30 dark:text-orange-300',
             ],
         ],
         [
@@ -50,21 +50,10 @@
             'route' => 'certificates',
             'active' => 'certificates',
             'accent' => [
-                'dot' => 'bg-indigo-500',
-                'text' => 'text-indigo-700 dark:text-indigo-300',
-                'hover' => 'hover:bg-indigo-500/10 hover:text-indigo-700 dark:hover:text-indigo-300',
-                'active' => 'bg-indigo-500/15 text-indigo-700 ring-1 ring-inset ring-indigo-500/30 dark:text-indigo-300',
-            ],
-        ],
-        [
-            'label' => 'Pengalaman',
-            'route' => 'experience',
-            'active' => 'experience',
-            'accent' => [
-                'dot' => 'bg-indigo-500',
-                'text' => 'text-indigo-700 dark:text-indigo-300',
-                'hover' => 'hover:bg-indigo-500/10 hover:text-indigo-700 dark:hover:text-indigo-300',
-                'active' => 'bg-indigo-500/15 text-indigo-700 ring-1 ring-inset ring-indigo-500/30 dark:text-indigo-300',
+                'dot' => 'bg-orange-700',
+                'text' => 'text-orange-800 dark:text-orange-300',
+                'hover' => 'hover:bg-orange-700/10 hover:text-orange-800 dark:hover:text-orange-300',
+                'active' => 'bg-orange-700/15 text-orange-900 ring-1 ring-inset ring-orange-700/30 dark:text-orange-300',
             ],
         ],
         [
@@ -72,21 +61,10 @@
             'route' => 'posts.index',
             'active' => 'posts.*',
             'accent' => [
-                'dot' => 'bg-indigo-500',
-                'text' => 'text-indigo-700 dark:text-indigo-300',
-                'hover' => 'hover:bg-indigo-500/10 hover:text-indigo-700 dark:hover:text-indigo-300',
-                'active' => 'bg-indigo-500/15 text-indigo-700 ring-1 ring-inset ring-indigo-500/30 dark:text-indigo-300',
-            ],
-        ],
-        [
-            'label' => 'Testimoni',
-            'route' => 'testimonies',
-            'active' => 'testimonies',
-            'accent' => [
-                'dot' => 'bg-indigo-500',
-                'text' => 'text-indigo-700 dark:text-indigo-300',
-                'hover' => 'hover:bg-indigo-500/10 hover:text-indigo-700 dark:hover:text-indigo-300',
-                'active' => 'bg-indigo-500/15 text-indigo-700 ring-1 ring-inset ring-indigo-500/30 dark:text-indigo-300',
+                'dot' => 'bg-orange-700',
+                'text' => 'text-orange-800 dark:text-orange-300',
+                'hover' => 'hover:bg-orange-700/10 hover:text-orange-800 dark:hover:text-orange-300',
+                'active' => 'bg-orange-700/15 text-orange-900 ring-1 ring-inset ring-orange-700/30 dark:text-orange-300',
             ],
         ],
         [
@@ -94,10 +72,10 @@
             'route' => 'cv',
             'active' => 'cv',
             'accent' => [
-                'dot' => 'bg-indigo-500',
-                'text' => 'text-indigo-700 dark:text-indigo-300',
-                'hover' => 'hover:bg-indigo-500/10 hover:text-indigo-700 dark:hover:text-indigo-300',
-                'active' => 'bg-indigo-500/15 text-indigo-700 ring-1 ring-inset ring-indigo-500/30 dark:text-indigo-300',
+                'dot' => 'bg-orange-700',
+                'text' => 'text-orange-800 dark:text-orange-300',
+                'hover' => 'hover:bg-orange-700/10 hover:text-orange-800 dark:hover:text-orange-300',
+                'active' => 'bg-orange-700/15 text-orange-900 ring-1 ring-inset ring-orange-700/30 dark:text-orange-300',
             ],
         ],
         [
@@ -105,10 +83,10 @@
             'route' => 'contact',
             'active' => 'contact',
             'accent' => [
-                'dot' => 'bg-indigo-500',
-                'text' => 'text-indigo-700 dark:text-indigo-300',
-                'hover' => 'hover:bg-indigo-500/10 hover:text-indigo-700 dark:hover:text-indigo-300',
-                'active' => 'bg-indigo-500/15 text-indigo-700 ring-1 ring-inset ring-indigo-500/30 dark:text-indigo-300',
+                'dot' => 'bg-teal-500',
+                'text' => 'text-teal-700 dark:text-teal-300',
+                'hover' => 'hover:bg-teal-500/10 hover:text-teal-700 dark:hover:text-teal-300',
+                'active' => 'bg-teal-500/15 text-teal-800 ring-1 ring-inset ring-teal-500/30 dark:text-teal-300',
             ],
         ],
     ];
@@ -134,7 +112,10 @@
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="flex min-h-screen flex-col bg-background font-sans text-on-surface antialiased selection:bg-indigo-500 selection:text-white">
+    <body @class([
+        'flex min-h-screen flex-col bg-background font-sans text-on-surface antialiased selection:text-white',
+        'portfolio-theme selection:bg-orange-800',
+    ])>
         @include('layouts.partials.site-header', ['siteProfile' => $siteProfile, 'navItems' => $navItems])
 
         <main class="page-transition flex-grow">

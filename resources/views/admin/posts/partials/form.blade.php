@@ -20,10 +20,10 @@
             <span>Gambar Sampul</span>
             <span class="font-mono text-[10px] font-normal text-outline">JPG, PNG, WEBP &bull; maks 4MB</span>
         </label>
-        <label for="cover" class="flex cursor-pointer flex-col items-center justify-center gap-1.5 rounded-xl border border-dashed border-surface-highest bg-background px-3 py-5 text-center transition-colors hover:border-blue-500/60">
+        <label for="cover" class="flex cursor-pointer flex-col items-center justify-center gap-1.5 rounded-xl border border-dashed border-surface-highest bg-background px-3 py-5 text-center transition-colors hover:border-orange-500/60">
             <x-icon name="image" class="size-6 text-outline" />
             <span class="text-xs font-medium text-on-surface-variant">Klik untuk memilih gambar</span>
-            <span id="cover-filename" class="font-mono text-[10px] text-blue-500">
+            <span id="cover-filename" class="font-mono text-[10px] text-orange-500">
                 {{ $editing?->cover_path ? 'Kosongkan untuk mempertahankan gambar saat ini' : 'Belum ada file dipilih' }}
             </span>
             <input
@@ -76,7 +76,7 @@
     />
 
     <div class="flex items-center gap-2 pt-1">
-        <button type="submit" class="flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-600/25 transition-all hover:from-blue-500 hover:to-indigo-500">
+        <button type="submit" class="flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-xl bg-orange-800 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-600/25 transition-all hover:from-orange-500 hover:to-orange-500">
             <x-icon :name="$editing ? 'check-circle' : 'plus-circle'" class="size-4" />
             {{ $editing ? 'Simpan Perubahan' : 'Simpan Artikel' }}
         </button>

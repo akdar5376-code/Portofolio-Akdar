@@ -9,10 +9,12 @@
     $adminNav = [
         ['label' => 'Dasbor', 'route' => 'admin.dashboard', 'active' => 'admin.dashboard', 'icon' => 'layout-dashboard'],
         ['label' => 'Proyek', 'route' => 'admin.projects.index', 'active' => 'admin.projects.*', 'icon' => 'layers'],
-        ['label' => 'Konten', 'route' => 'admin.content.index', 'active' => 'admin.content.*', 'icon' => 'sparkles'],
+        ['label' => 'Keahlian', 'route' => 'admin.content.skills', 'active' => 'admin.content.skills', 'icon' => 'zap'],
+        ['label' => 'Pengalaman', 'route' => 'admin.content.experiences', 'active' => 'admin.content.experiences', 'icon' => 'briefcase'],
+        ['label' => 'Pendidikan', 'route' => 'admin.content.educations', 'active' => 'admin.content.educations', 'icon' => 'graduation-cap'],
         ['label' => 'Sertifikat', 'route' => 'admin.certificates.index', 'active' => 'admin.certificates.*', 'icon' => 'award'],
-        ['label' => 'Testimoni', 'route' => 'admin.testimonies.index', 'active' => 'admin.testimonies.*', 'icon' => 'quote'],
-        ['label' => 'Pesan', 'route' => 'admin.messages.index', 'active' => 'admin.messages.*', 'icon' => 'message-square'],
+        ['label' => 'Pesan Testimoni', 'route' => 'admin.testimonies.index', 'active' => 'admin.testimonies.*', 'icon' => 'quote'],
+        ['label' => 'Pesan Kontak', 'route' => 'admin.messages.index', 'active' => 'admin.messages.*', 'icon' => 'message-square'],
         ['label' => 'Profil', 'route' => 'admin.profile.edit', 'active' => 'admin.profile.*', 'icon' => 'user'],
     ];
 @endphp
@@ -29,8 +31,7 @@
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="min-h-screen bg-background font-sans text-on-surface antialiased selection:bg-indigo-500 selection:text-white">
-        <div class="grid-pattern pointer-events-none fixed inset-0 opacity-50"></div>
+    <body class="admin-theme min-h-screen bg-background font-sans text-on-surface antialiased selection:bg-orange-800 selection:text-white">
 
         <aside
             class="fixed inset-y-0 left-0 z-50 flex w-64 -translate-x-full flex-col border-r border-surface-highest bg-surface-lowest transition-transform duration-300 lg:translate-x-0"
@@ -38,17 +39,15 @@
         >
             <div class="flex h-16 items-center gap-2.5 border-b border-surface-highest px-5">
                 <a href="{{ route('admin.dashboard') }}" class="flex items-center gap-2.5">
-                    <div class="size-9 rounded-xl bg-gradient-to-tr from-indigo-600 via-blue-500 to-cyan-400 p-px shadow-lg shadow-indigo-500/20">
-                        <div class="flex size-full items-center justify-center rounded-[11px] bg-background">
-                            <span class="font-mono text-sm font-bold text-white">D</span>
-                        </div>
+                    <div class="flex size-9 items-center justify-center border border-orange-700/40 bg-orange-700/10">
+                        <span class="font-mono text-sm font-bold text-heading">D</span>
                     </div>
-                    <span class="text-base font-extrabold tracking-tight text-heading">Admin<span class="text-blue-500 dark:text-blue-400">Panel</span></span>
+                    <span class="text-base font-extrabold tracking-tight text-heading">Admin<span class="text-orange-500 dark:text-orange-400">Panel</span></span>
                 </a>
             </div>
 
             <div class="flex items-center gap-3 border-b border-surface-highest px-5 py-4">
-                <div class="flex size-10 shrink-0 items-center justify-center overflow-hidden rounded-full bg-gradient-to-tr from-blue-600 to-indigo-600 font-mono text-xs font-bold text-white ring-2 ring-blue-400/20">
+                <div class="flex size-10 shrink-0 items-center justify-center overflow-hidden border border-orange-700/30 bg-orange-700/10 font-mono text-xs font-bold text-orange-900 dark:text-orange-300">
                     @if ($adminProfile->avatar_url)
                         <img src="{{ $adminProfile->avatar_url }}" alt="{{ $adminProfile->full_name }}" class="h-full w-full object-cover object-top">
                     @else
@@ -67,7 +66,7 @@
                         href="{{ route($item['route']) }}"
                         @class([
                             'flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-sm font-semibold transition-colors',
-                            'bg-blue-600 text-white shadow-md shadow-blue-600/20' => request()->routeIs($item['active']),
+                            'bg-orange-800 text-white' => request()->routeIs($item['active']),
                             'text-on-surface-variant hover:bg-surface-container hover:text-heading' => ! request()->routeIs($item['active']),
                         ])
                     >

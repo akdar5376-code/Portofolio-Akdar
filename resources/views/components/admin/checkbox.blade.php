@@ -11,7 +11,7 @@
         name="{{ $name }}"
         value="1"
         @checked(old($name, $checked))
-        {{ $attributes->merge(['class' => 'size-4 rounded border-surface-highest accent-blue-600']) }}
+        {{ $attributes->merge(['class' => 'size-4 rounded border-surface-highest accent-orange-600']) }}
     >
     <span>{{ $label }}</span>
 </label>

@@ -9,7 +9,7 @@
             <h2 class="text-2xl font-extrabold tracking-tight text-heading">Ringkasan Website</h2>
             <p class="mt-1 text-sm text-on-surface-variant">Kelola seluruh konten portofolio dari satu tempat tanpa mengubah kode.</p>
         </div>
-        <a href="{{ route('home') }}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 rounded-full bg-blue-600 px-4 py-2.5 text-xs font-semibold text-white transition-colors hover:bg-blue-500">
+        <a href="{{ route('home') }}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 rounded-full bg-orange-600 px-4 py-2.5 text-xs font-semibold text-white transition-colors hover:bg-orange-500">
             <x-icon name="eye" class="size-4" />
             Buka Website
         </a>
@@ -17,14 +17,14 @@
 
     <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         @foreach ([
-            ['label' => 'Proyek', 'value' => $counts['projects'], 'icon' => 'layers', 'route' => 'admin.projects.index', 'accent' => 'blue'],
-            ['label' => 'Sertifikat', 'value' => $counts['certificates'], 'icon' => 'award', 'route' => 'admin.certificates.index', 'accent' => 'amber'],
-            ['label' => 'Keahlian', 'value' => $counts['skills'], 'icon' => 'zap', 'route' => 'admin.content.index', 'accent' => 'indigo'],
-            ['label' => 'Pesan Belum Dibaca', 'value' => $counts['unreadMessages'], 'icon' => 'message-square', 'route' => 'admin.messages.index', 'accent' => 'emerald'],
+            ['label' => 'Proyek', 'value' => $counts['projects'], 'icon' => 'layers', 'route' => 'admin.projects.index'],
+            ['label' => 'Sertifikat', 'value' => $counts['certificates'], 'icon' => 'award', 'route' => 'admin.certificates.index'],
+            ['label' => 'Keahlian', 'value' => $counts['skills'], 'icon' => 'zap', 'route' => 'admin.content.index'],
+            ['label' => 'Pesan Kontak Belum Dibaca', 'value' => $counts['unreadMessages'], 'icon' => 'message-square', 'route' => 'admin.messages.index'],
         ] as $card)
-            <a href="{{ route($card['route']) }}" class="group rounded-2xl border border-surface-highest bg-surface-low p-5 shadow-card-dark transition-all hover:-translate-y-0.5 hover:border-blue-500/40">
+            <a href="{{ route($card['route']) }}" class="group rounded-lg border border-surface-highest bg-surface-low p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-orange-500/40">
                 <div class="mb-3 flex items-center justify-between">
-                    <span class="flex size-10 items-center justify-center rounded-xl border border-blue-500/30 bg-blue-500/10 text-blue-600 dark:text-blue-300">
+                    <span class="flex size-10 items-center justify-center rounded-xl border border-orange-500/30 bg-orange-500/10 text-orange-600 dark:text-orange-300">
                         <x-icon :name="$card['icon']" class="size-5" />
                     </span>
                     <x-icon name="arrow-up-right" class="size-4 text-outline transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -36,13 +36,13 @@
     </div>
 
     <div class="mt-6 grid gap-6 lg:grid-cols-2">
-        <section class="rounded-2xl border border-surface-highest bg-surface-low p-5 shadow-card-dark sm:p-6">
+        <section class="rounded-lg border border-surface-highest bg-surface-low p-5 shadow-sm sm:p-6">
             <div class="mb-4 flex items-center justify-between">
                 <h2 class="flex items-center gap-2 text-base font-bold text-heading">
-                    <x-icon name="layers" class="size-4 text-blue-500" />
+                    <x-icon name="layers" class="size-4 text-orange-500" />
                     Proyek Terbaru
                 </h2>
-                <a href="{{ route('admin.projects.index') }}" class="text-xs font-semibold text-blue-600 hover:underline dark:text-blue-300">Kelola</a>
+                <a href="{{ route('admin.projects.index') }}" class="text-xs font-semibold text-orange-600 hover:underline dark:text-orange-300">Kelola</a>
             </div>
 
             <div class="space-y-3">
@@ -63,13 +63,13 @@
             </div>
         </section>
 
-        <section class="rounded-2xl border border-surface-highest bg-surface-low p-5 shadow-card-dark sm:p-6">
+        <section class="rounded-lg border border-surface-highest bg-surface-low p-5 shadow-sm sm:p-6">
             <div class="mb-4 flex items-center justify-between">
                 <h2 class="flex items-center gap-2 text-base font-bold text-heading">
-                    <x-icon name="message-square" class="size-4 text-emerald-500" />
-                    Pesan Terbaru
+                    <x-icon name="message-square" class="size-4 text-amber-500" />
+                    Pesan Kontak Terbaru
                 </h2>
-                <a href="{{ route('admin.messages.index') }}" class="text-xs font-semibold text-blue-600 hover:underline dark:text-blue-300">Lihat semua</a>
+                <a href="{{ route('admin.messages.index') }}" class="text-xs font-semibold text-orange-600 hover:underline dark:text-orange-300">Lihat semua</a>
             </div>
 
             <div class="space-y-3">
@@ -91,7 +91,7 @@
         </section>
     </div>
 
-    <section class="mt-6 rounded-2xl border border-surface-highest bg-gradient-to-br from-blue-600/10 via-surface-low to-cyan-500/10 p-5 sm:p-6">
+    <section class="mt-6 rounded-lg border border-surface-highest bg-surface-container p-5 sm:p-6">
         <h2 class="text-base font-bold text-heading">Aksi Cepat</h2>
         <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             @foreach ([
@@ -100,7 +100,7 @@
                 ['label' => 'Kelola Keahlian', 'route' => 'admin.content.index', 'icon' => 'zap'],
                 ['label' => 'Edit Profil', 'route' => 'admin.profile.edit', 'icon' => 'user'],
             ] as $action)
-                <a href="{{ route($action['route']) }}" class="flex items-center gap-2 rounded-xl border border-surface-highest bg-surface-low px-4 py-3 text-xs font-semibold text-on-surface transition-colors hover:border-blue-500/40 hover:text-blue-600 dark:hover:text-blue-300">
+                <a href="{{ route($action['route']) }}" class="flex items-center gap-2 rounded-xl border border-surface-highest bg-surface-low px-4 py-3 text-xs font-semibold text-on-surface transition-colors hover:border-orange-500/40 hover:text-orange-600 dark:hover:text-orange-300">
                     <x-icon :name="$action['icon']" class="size-4" />
                     {{ $action['label'] }}
                 </a>

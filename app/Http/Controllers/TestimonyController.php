@@ -15,7 +15,7 @@ class TestimonyController extends Controller
             'is_visible' => true,
         ]);
 
-        return back()
+        return redirect()->route('home')
             ->with('status', 'Terima kasih! Testimoni kamu sudah dikirim.')
             ->with('status_title', 'Testimoni Terkirim');
     }

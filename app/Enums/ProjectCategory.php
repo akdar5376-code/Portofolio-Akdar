@@ -37,9 +37,9 @@ enum ProjectCategory: string
     public function accent(): string
     {
         return match ($this) {
-            self::Web => 'blue',
-            self::Mobile => 'emerald',
-            self::IoT => 'indigo',
+            self::Web => 'orange',
+            self::Mobile => 'stone',
+            self::IoT => 'stone',
         };
     }
 
@@ -50,25 +50,25 @@ enum ProjectCategory: string
     {
         return match ($this) {
             self::Web => [
-                'badge' => 'bg-blue-950/80 text-blue-300 border-blue-500/30',
-                'dot' => 'bg-blue-400',
-                'title' => 'group-hover:text-blue-400',
-                'hover' => 'hover:border-blue-400/50 hover:shadow-glow-blue',
-                'thumb' => 'group-hover:border-blue-400/40',
+                'badge' => 'bg-orange-500/10 text-orange-800 dark:text-orange-300 border-orange-500/30',
+                'dot' => 'bg-orange-400',
+                'title' => 'group-hover:text-orange-400',
+                'hover' => 'hover:border-orange-400/50',
+                'thumb' => 'group-hover:border-orange-400/40',
             ],
             self::Mobile => [
-                'badge' => 'bg-cyan-950/80 text-cyan-300 border-cyan-500/30',
-                'dot' => 'bg-cyan-400',
-                'title' => 'group-hover:text-cyan-400',
-                'hover' => 'hover:border-cyan-400/50 hover:shadow-glow-cyan',
-                'thumb' => 'group-hover:border-cyan-400/40',
+                'badge' => 'bg-amber-500/10 text-amber-800 dark:text-amber-300 border-amber-500/30',
+                'dot' => 'bg-amber-400',
+                'title' => 'group-hover:text-amber-400',
+                'hover' => 'hover:border-amber-400/50',
+                'thumb' => 'group-hover:border-amber-400/40',
             ],
             self::IoT => [
-                'badge' => 'bg-indigo-950/80 text-indigo-300 border-indigo-500/30',
-                'dot' => 'bg-indigo-400',
-                'title' => 'group-hover:text-indigo-400',
-                'hover' => 'hover:border-indigo-400/50 hover:shadow-glow-blue',
-                'thumb' => 'group-hover:border-indigo-400/40',
+                'badge' => 'bg-stone-500/10 text-stone-700 dark:text-stone-300 border-stone-500/30',
+                'dot' => 'bg-stone-400',
+                'title' => 'group-hover:text-stone-400',
+                'hover' => 'hover:border-stone-400/50',
+                'thumb' => 'group-hover:border-stone-400/40',
             ],
         };
     }

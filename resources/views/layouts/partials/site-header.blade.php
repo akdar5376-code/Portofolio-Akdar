@@ -8,13 +8,11 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex h-[72px] items-center gap-4">
             <a class="group flex shrink-0 items-center gap-3" href="{{ route('home') }}" data-purpose="site-logo">
-                <div class="size-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-blue-500 to-cyan-400 p-px shadow-lg shadow-indigo-500/25 transition-transform duration-300 group-hover:scale-105">
-                    <div class="flex h-full w-full items-center justify-center rounded-[11px] bg-background">
+                <div class="flex size-10 items-center justify-center border border-orange-700/40 bg-orange-700/10 transition-colors group-hover:bg-orange-700/15">
                         <span class="font-mono text-lg font-bold text-heading">D</span>
-                    </div>
                 </div>
                 <span class="text-lg font-extrabold tracking-tight text-heading">
-                    Dar<span class="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent dark:from-blue-400 dark:to-cyan-300">Folio</span>
+                    Dar<span class="text-orange-800 dark:text-orange-300">Folio</span>
                 </span>
             </a>
 
@@ -50,9 +48,9 @@
 
                 <a
                     href="{{ $adminUrl }}"
-                    class="hidden items-center gap-1.5 rounded-full border border-surface-highest bg-surface-low px-3.5 py-2 text-xs font-semibold text-on-surface transition-colors hover:border-blue-500/40 hover:text-blue-600 sm:inline-flex dark:hover:text-blue-300"
+                    class="hidden items-center gap-1.5 rounded-md border border-surface-highest bg-surface-low px-3.5 py-2 text-xs font-semibold text-on-surface transition-colors hover:border-orange-700 hover:text-orange-800 sm:inline-flex dark:hover:text-orange-300"
                 >
-                    <span class="size-1.5 animate-pulse rounded-full bg-emerald-500"></span>
+                    <span class="size-1.5 rounded-full bg-orange-700"></span>
                     {{ auth()->check() && auth()->user()->is_admin ? 'Panel Admin' : 'Admin' }}
                 </a>
 

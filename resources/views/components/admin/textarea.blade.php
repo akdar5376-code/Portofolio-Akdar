@@ -23,7 +23,7 @@
         placeholder="{{ $placeholder }}"
         {{ $attributes }}
         @class([
-            'w-full resize-y rounded-xl border bg-background px-3.5 py-3 text-sm text-on-surface outline-none transition-colors placeholder:text-outline focus:border-blue-500',
+            'w-full resize-y rounded-xl border bg-background px-3.5 py-3 text-sm text-on-surface outline-none transition-colors placeholder:text-outline focus:border-orange-500',
             'border-red-500/60' => $errors->has($name),
             'border-surface-highest' => ! $errors->has($name),
         ])

@@ -14,7 +14,7 @@
             <p class="mt-1 text-sm text-on-surface-variant">Tulis artikel, tutorial, dan catatan ngoding yang tampil di blog publik.</p>
         </div>
         @if ($editing)
-            <a href="{{ route('admin.posts.index') }}" class="flex items-center justify-center gap-2 rounded-full border border-surface-highest bg-surface-low px-4 py-2.5 text-xs font-semibold text-on-surface transition-colors hover:border-blue-500/40">
+            <a href="{{ route('admin.posts.index') }}" class="flex items-center justify-center gap-2 rounded-full border border-surface-highest bg-surface-low px-4 py-2.5 text-xs font-semibold text-on-surface transition-colors hover:border-orange-500/40">
                 <x-icon name="plus" class="size-4" />
                 Tulis Artikel Baru
             </a>
@@ -37,11 +37,11 @@
     </div>
 
     <div class="grid items-start gap-6 xl:grid-cols-[minmax(0,520px)_1fr]">
-        <section id="form" class="rounded-2xl border border-surface-highest bg-surface-low p-5 shadow-card-dark sm:p-6">
+        <section id="form" class="rounded-lg border border-surface-highest bg-surface-low p-5 shadow-sm sm:p-6">
             <div class="mb-5 flex items-center justify-between border-b border-surface-highest pb-4">
                 <div>
                     <h2 class="flex items-center gap-2 text-base font-bold text-heading">
-                        <x-icon :name="$editing ? 'edit' : 'plus-circle'" class="size-4 text-blue-500" />
+                        <x-icon :name="$editing ? 'edit' : 'plus-circle'" class="size-4 text-orange-500" />
                         {{ $editing ? 'Edit Artikel' : 'Tulis Artikel Baru' }}
                     </h2>
                     <p class="mt-1 text-xs text-on-surface-variant">{{ $editing ? 'Perbarui tulisan lalu simpan perubahan.' : 'Isi tulisan untuk dipublikasikan ke blog.' }}</p>
@@ -51,10 +51,10 @@
             @include('admin.posts.partials.form')
         </section>
 
-        <section class="rounded-2xl border border-surface-highest bg-surface-low p-5 shadow-card-dark sm:p-6">
+        <section class="rounded-lg border border-surface-highest bg-surface-low p-5 shadow-sm sm:p-6">
             <div class="mb-4 flex items-center justify-between">
                 <h2 class="flex items-center gap-2 text-base font-bold text-heading">
-                    <x-icon name="file-text" class="size-4 text-indigo-500" />
+                    <x-icon name="file-text" class="size-4 text-orange-500" />
                     Daftar Artikel
                 </h2>
                 <span class="rounded-full border border-surface-highest bg-surface-container px-2.5 py-1 font-mono text-[10px] text-on-surface-variant">{{ $counts['total'] }} artikel</span>
@@ -89,7 +89,7 @@
                                     @if (! $post->is_published)
                                         <span class="rounded-full bg-amber-500/10 px-2 py-0.5 font-mono text-[9px] font-bold uppercase text-amber-600 dark:text-amber-300">Draf</span>
                                     @elseif ($isScheduled)
-                                        <span class="rounded-full bg-indigo-500/10 px-2 py-0.5 font-mono text-[9px] font-bold uppercase text-indigo-600 dark:text-indigo-300">Jadwal</span>
+                                        <span class="rounded-full bg-orange-500/10 px-2 py-0.5 font-mono text-[9px] font-bold uppercase text-orange-600 dark:text-orange-300">Jadwal</span>
                                     @else
                                         <span class="rounded-full bg-emerald-500/10 px-2 py-0.5 font-mono text-[9px] font-bold uppercase text-emerald-600 dark:text-emerald-300">Terbit</span>
                                     @endif

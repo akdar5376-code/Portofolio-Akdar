@@ -23,9 +23,9 @@
                         <a
                             href="{{ $contact['href'] }}"
                             @if ($contact['href'] && str_starts_with($contact['href'], 'http')) target="_blank" rel="noopener noreferrer" @endif
-                            class="flex items-center gap-4 rounded-2xl border border-surface-highest bg-surface-low p-4 shadow-card-dark transition-all hover:-translate-y-0.5 hover:border-blue-500/40"
+                            class="flex items-center gap-4 rounded-lg border border-surface-highest bg-surface-low p-4 shadow-sm transition-all hover:-translate-y-0.5 hover:border-orange-500/40"
                         >
-                            <span class="flex size-11 shrink-0 items-center justify-center rounded-xl border border-blue-500/30 bg-blue-500/10 text-blue-600 dark:text-blue-300">
+                            <span class="flex size-11 shrink-0 items-center justify-center rounded-xl border border-orange-500/30 bg-orange-500/10 text-orange-600 dark:text-orange-300">
                                 <x-icon :name="$contact['icon']" class="size-5" />
                             </span>
                             <span class="min-w-0">
@@ -39,9 +39,9 @@
 
             </div>
 
-            <div class="rounded-2xl border border-surface-highest bg-surface-low p-6 shadow-card-dark sm:p-8">
+            <div class="rounded-lg border border-surface-highest bg-surface-low p-6 shadow-sm sm:p-8">
                 <div class="mb-6">
-                    <span class="mb-2 inline-flex items-center gap-2 font-mono text-[10px] font-bold uppercase tracking-widest text-blue-600 dark:text-blue-300">
+                    <span class="mb-2 inline-flex items-center gap-2 font-mono text-[10px] font-bold uppercase tracking-widest text-orange-600 dark:text-orange-300">
                         <x-icon name="message-square" class="size-3.5" />
                         Formulir Kesan &amp; Pesan
                     </span>
@@ -64,7 +64,7 @@
                                 maxlength="100"
                                 placeholder="Nama kamu"
                                 @class([
-                                    'w-full rounded-xl border bg-background px-3.5 py-2.5 text-sm text-on-surface outline-none transition-colors placeholder:text-outline focus:border-blue-500',
+                                    'w-full rounded-xl border bg-background px-3.5 py-2.5 text-sm text-on-surface outline-none transition-colors placeholder:text-outline focus:border-orange-500',
                                     'border-red-500/60' => $errors->has('name'),
                                     'border-surface-highest' => ! $errors->has('name'),
                                 ])
@@ -85,7 +85,7 @@
                                 maxlength="150"
                                 placeholder="nama@email.com"
                                 @class([
-                                    'w-full rounded-xl border bg-background px-3.5 py-2.5 text-sm text-on-surface outline-none transition-colors placeholder:text-outline focus:border-blue-500',
+                                    'w-full rounded-xl border bg-background px-3.5 py-2.5 text-sm text-on-surface outline-none transition-colors placeholder:text-outline focus:border-orange-500',
                                     'border-red-500/60' => $errors->has('email'),
                                     'border-surface-highest' => ! $errors->has('email'),
                                 ])
@@ -105,7 +105,7 @@
                             value="{{ old('subject') }}"
                             maxlength="150"
                             placeholder="Kolaborasi proyek, pertanyaan, atau feedback"
-                            class="w-full rounded-xl border border-surface-highest bg-background px-3.5 py-2.5 text-sm text-on-surface outline-none transition-colors placeholder:text-outline focus:border-blue-500"
+                            class="w-full rounded-xl border border-surface-highest bg-background px-3.5 py-2.5 text-sm text-on-surface outline-none transition-colors placeholder:text-outline focus:border-orange-500"
                         >
                         @error('subject')
                             <p class="mt-1 text-[11px] text-red-500">{{ $message }}</p>
@@ -122,7 +122,7 @@
                             maxlength="3000"
                             placeholder="Tulis kesan, pesan, pertanyaan, atau tawaran kolaborasi..."
                             @class([
-                                'w-full resize-y rounded-xl border bg-background px-3.5 py-3 text-sm text-on-surface outline-none transition-colors placeholder:text-outline focus:border-blue-500',
+                                'w-full resize-y rounded-xl border bg-background px-3.5 py-3 text-sm text-on-surface outline-none transition-colors placeholder:text-outline focus:border-orange-500',
                                 'border-red-500/60' => $errors->has('message'),
                                 'border-surface-highest' => ! $errors->has('message'),
                             ])
@@ -134,7 +134,7 @@
 
                     <div class="flex flex-col items-start justify-between gap-3 pt-1 sm:flex-row sm:items-center">
                         <p class="text-[11px] leading-relaxed text-outline">Data hanya digunakan untuk membalas pesanmu.</p>
-                        <button type="submit" class="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-600/25 transition-all hover:-translate-y-0.5 hover:from-blue-500 hover:to-indigo-500 sm:w-auto">
+                        <button type="submit" class="flex w-full items-center justify-center gap-2 rounded-full bg-orange-800 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-600/25 transition-all hover:-translate-y-0.5 hover:from-orange-500 hover:to-orange-500 sm:w-auto">
                             <x-icon name="send" class="size-4" />
                             Kirim Pesan
                         </button>

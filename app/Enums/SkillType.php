@@ -18,8 +18,8 @@ enum SkillType: string
     public function accent(): string
     {
         return match ($this) {
-            self::Hard => 'blue',
-            self::Soft => 'emerald',
+            self::Hard => 'orange',
+            self::Soft => 'stone',
         };
     }
 
@@ -30,14 +30,14 @@ enum SkillType: string
     {
         return match ($this) {
             self::Hard => [
-                'badge' => 'border-blue-500/30 bg-blue-500/10 text-blue-500 dark:text-blue-300',
-                'bar' => 'bg-gradient-to-r from-blue-600 to-cyan-400',
-                'text' => 'text-blue-600 dark:text-blue-300',
+                'badge' => 'border-orange-500/30 bg-orange-500/10 text-orange-500 dark:text-orange-300',
+                'bar' => 'bg-orange-800',
+                'text' => 'text-orange-600 dark:text-orange-300',
             ],
             self::Soft => [
-                'badge' => 'border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-300',
-                'bar' => 'bg-gradient-to-r from-emerald-600 to-teal-400',
-                'text' => 'text-emerald-600 dark:text-emerald-300',
+                'badge' => 'border-stone-500/30 bg-stone-500/10 text-stone-600 dark:text-stone-300',
+                'bar' => 'bg-stone-600',
+                'text' => 'text-stone-600 dark:text-stone-300',
             ],
         };
     }

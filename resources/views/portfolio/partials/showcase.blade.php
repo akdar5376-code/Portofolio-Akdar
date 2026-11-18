@@ -3,11 +3,11 @@
     data-purpose="portfolio-gallery-section"
     id="portfolio"
 >
-    <div class="pointer-events-none absolute left-1/2 top-10 h-[300px] w-[700px] -translate-x-1/2 rounded-full bg-blue-600/10 blur-[140px]"></div>
+    <div class="pointer-events-none absolute left-1/2 top-10 h-[300px] w-[700px] -translate-x-1/2 rounded-full bg-orange-600/10 blur-[140px]"></div>
 
     <div class="relative z-10 mx-auto mb-12 max-w-2xl text-center">
-        <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-500/30 bg-surface-low px-3.5 py-1 font-mono text-xs font-semibold uppercase tracking-widest text-blue-300 shadow-inner">
-            <span class="size-1.5 animate-pulse rounded-full bg-blue-400 shadow-[0_0_8px_#60a5fa]"></span>
+        <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-surface-low px-3.5 py-1 font-mono text-xs font-semibold uppercase tracking-widest text-orange-300 shadow-inner">
+            <span class="size-1.5 animate-pulse rounded-full bg-orange-400 shadow-[0_0_8px_#60a5fa]"></span>
             Portfolio Showcase
         </div>
         <h2 class="mb-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">My Recent Projects</h2>
@@ -18,7 +18,7 @@
 
     @if ($projects->isEmpty())
         <div class="relative z-10 my-8 rounded-3xl border border-surface-highest bg-surface-low/80 py-20 text-center shadow-xl" id="no-projects-message">
-            <div class="mx-auto mb-4 flex size-16 items-center justify-center rounded-2xl border border-surface-highest bg-surface-high text-blue-400">
+            <div class="mx-auto mb-4 flex size-16 items-center justify-center rounded-lg border border-surface-highest bg-surface-high text-orange-400">
                 <x-icon name="folder-off" class="size-8" />
             </div>
             <p class="text-base font-semibold text-white">Belum ada proyek yang ditampilkan.</p>

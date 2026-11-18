@@ -12,7 +12,7 @@
             <p class="mt-1 text-sm text-on-surface-variant">Tambah, ubah, dan hapus proyek yang tampil di galeri publik.</p>
         </div>
         @if ($editing)
-            <a href="{{ route('admin.projects.index') }}" class="flex items-center justify-center gap-2 rounded-full border border-surface-highest bg-surface-low px-4 py-2.5 text-xs font-semibold text-on-surface transition-colors hover:border-blue-500/40">
+            <a href="{{ route('admin.projects.index') }}" class="flex items-center justify-center gap-2 rounded-full border border-surface-highest bg-surface-low px-4 py-2.5 text-xs font-semibold text-on-surface transition-colors hover:border-orange-500/40">
                 <x-icon name="plus" class="size-4" />
                 Tambah Proyek Baru
             </a>
@@ -35,11 +35,11 @@
     </div>
 
     <div class="grid items-start gap-6 xl:grid-cols-[minmax(0,460px)_1fr]">
-        <section id="form" class="rounded-2xl border border-surface-highest bg-surface-low p-5 shadow-card-dark sm:p-6">
+        <section id="form" class="rounded-lg border border-surface-highest bg-surface-low p-5 shadow-sm sm:p-6">
             <div class="mb-5 flex items-center justify-between border-b border-surface-highest pb-4">
                 <div>
                     <h2 class="flex items-center gap-2 text-base font-bold text-heading">
-                        <x-icon :name="$editing ? 'edit' : 'plus-circle'" class="size-4 text-blue-500" />
+                        <x-icon :name="$editing ? 'edit' : 'plus-circle'" class="size-4 text-orange-500" />
                         {{ $editing ? 'Edit Project' : 'Tambah Proyek Baru' }}
                     </h2>
                     <p class="mt-1 text-xs text-on-surface-variant">{{ $editing ? 'Perbarui data proyek lalu simpan.' : 'Isi data proyek untuk dipublikasikan.' }}</p>
@@ -49,10 +49,10 @@
             @include('admin.projects.partials.form')
         </section>
 
-        <section class="rounded-2xl border border-surface-highest bg-surface-low p-5 shadow-card-dark sm:p-6">
+        <section class="rounded-lg border border-surface-highest bg-surface-low p-5 shadow-sm sm:p-6">
             <div class="mb-4 flex items-center justify-between">
                 <h2 class="flex items-center gap-2 text-base font-bold text-heading">
-                    <x-icon name="layers" class="size-4 text-indigo-500" />
+                    <x-icon name="layers" class="size-4 text-orange-500" />
                     Daftar Proyek
                 </h2>
                 <span class="rounded-full border border-surface-highest bg-surface-container px-2.5 py-1 font-mono text-[10px] text-on-surface-variant">{{ $counts['total'] }} proyek</span>

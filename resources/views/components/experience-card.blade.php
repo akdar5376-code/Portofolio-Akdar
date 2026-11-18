@@ -6,7 +6,7 @@
     $accent = $experience->type->accentClasses();
 @endphp
 
-<article class="relative flex gap-4 rounded-2xl border border-surface-highest bg-surface-low p-5 shadow-card-dark transition-colors hover:border-blue-500/30">
+<article class="relative flex gap-4 border-t border-surface-highest py-5 transition-colors hover:border-orange-700">
     <div class="flex size-11 shrink-0 items-center justify-center rounded-xl border {{ $accent['icon'] }}">
         <x-icon :name="$experience->type->icon()" class="size-5" />
     </div>
@@ -26,7 +26,7 @@
 
         <h3 class="text-base font-bold tracking-tight text-heading">{{ $experience->title }}</h3>
         @if ($experience->organization)
-            <p class="mt-0.5 text-xs font-semibold text-blue-600 dark:text-blue-300">{{ $experience->organization }}</p>
+            <p class="mt-0.5 text-xs font-semibold text-orange-600 dark:text-orange-300">{{ $experience->organization }}</p>
         @endif
         @if ($experience->description)
             <p class="mt-2 text-sm leading-relaxed text-on-surface-variant">{{ $experience->description }}</p>

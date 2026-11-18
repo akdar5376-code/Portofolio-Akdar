@@ -8,7 +8,7 @@
 @endphp
 
 <article
-    {{ $attributes->merge(['class' => 'group flex flex-col overflow-hidden rounded-2xl border border-surface-highest bg-surface-low shadow-card-dark transition-all duration-300 hover:-translate-y-1.5 '.$accent['hover']]) }}
+    {{ $attributes->merge(['class' => 'group flex flex-col overflow-hidden border-y border-surface-highest bg-transparent transition-colors '.$accent['hover']]) }}
     data-category="{{ $project->category }}"
     data-purpose="project-card"
 >
@@ -19,8 +19,6 @@
             loading="lazy"
             class="h-full w-full object-contain"
         >
-        <div class="absolute inset-0 bg-gradient-to-t from-surface-lowest/80 via-transparent to-transparent opacity-70"></div>
-
         <div class="absolute left-4 top-4">
             <span class="inline-flex items-center gap-1.5 rounded-full border bg-surface-lowest/95 px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-wider shadow-md backdrop-blur-md {{ $accent['badge'] }}">
                 <span class="size-1.5 rounded-full {{ $accent['dot'] }}"></span>
@@ -59,7 +57,7 @@
         <div class="flex items-center justify-between gap-2 border-t border-surface-high pt-4">
             <button
                 type="button"
-                class="flex cursor-pointer items-center gap-1.5 rounded-full border border-surface-highest bg-surface-container px-3.5 py-1.5 text-xs font-semibold text-on-surface transition-colors hover:border-blue-500/40 hover:text-blue-600 dark:hover:text-blue-300"
+                class="flex cursor-pointer items-center gap-1.5 border border-surface-highest px-3.5 py-1.5 text-xs font-semibold text-on-surface transition-colors hover:border-orange-700 hover:text-orange-800 dark:hover:text-orange-300"
                 data-project-preview
                 data-title="{{ $project->title }}"
                 data-category="{{ $project->category }}"
@@ -83,7 +81,7 @@
                         href="{{ $project->project_url }}"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="flex size-8 items-center justify-center rounded-full text-outline transition-colors hover:bg-surface-container hover:text-blue-600 dark:hover:text-blue-300"
+                        class="flex size-8 items-center justify-center text-outline transition-colors hover:text-orange-800 dark:hover:text-orange-300"
                         aria-label="Buka demo {{ $project->title }}"
                     >
                         <x-icon name="external-link" class="size-4" />
@@ -91,7 +89,7 @@
                 @endif
                 <a
                     href="{{ route('projects.show', $project) }}"
-                    class="flex items-center gap-1 rounded-full bg-blue-600/10 px-3 py-1.5 text-xs font-semibold text-blue-600 transition-colors hover:bg-blue-600 hover:text-white dark:text-blue-300 dark:hover:text-white"
+                    class="flex items-center gap-1 bg-orange-800/10 px-3 py-1.5 text-xs font-semibold text-orange-900 transition-colors hover:bg-orange-800 hover:text-white dark:text-orange-300 dark:hover:bg-orange-300 dark:hover:text-stone-950"
                 >
                     Detail
                     <x-icon name="arrow-right" class="size-3.5" />

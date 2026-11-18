@@ -50,22 +50,22 @@ enum PostCategory: string
     {
         return match ($this) {
             self::Artikel => [
-                'badge' => 'bg-blue-950/80 text-blue-300 border-blue-500/30',
-                'dot' => 'bg-blue-400',
-                'title' => 'group-hover:text-blue-400',
-                'hover' => 'hover:border-blue-400/50 hover:shadow-glow-blue',
+                'badge' => 'bg-orange-500/10 text-orange-800 dark:text-orange-300 border-orange-500/30',
+                'dot' => 'bg-orange-400',
+                'title' => 'group-hover:text-orange-400',
+                'hover' => 'hover:border-orange-400/50',
             ],
             self::Catatan => [
-                'badge' => 'bg-emerald-950/80 text-emerald-300 border-emerald-500/30',
-                'dot' => 'bg-emerald-400',
-                'title' => 'group-hover:text-emerald-400',
-                'hover' => 'hover:border-emerald-400/50 hover:shadow-glow-cyan',
+                'badge' => 'bg-stone-500/10 text-stone-700 dark:text-stone-300 border-stone-500/30',
+                'dot' => 'bg-stone-400',
+                'title' => 'group-hover:text-stone-400',
+                'hover' => 'hover:border-stone-400/50',
             ],
             self::Tutorial => [
-                'badge' => 'bg-indigo-950/80 text-indigo-300 border-indigo-500/30',
-                'dot' => 'bg-indigo-400',
-                'title' => 'group-hover:text-indigo-400',
-                'hover' => 'hover:border-indigo-400/50 hover:shadow-glow-blue',
+                'badge' => 'bg-amber-500/10 text-amber-800 dark:text-amber-300 border-amber-500/30',
+                'dot' => 'bg-stone-400',
+                'title' => 'group-hover:text-stone-400',
+                'hover' => 'hover:border-amber-400/50',
             ],
         };
     }

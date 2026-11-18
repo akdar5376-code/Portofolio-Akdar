@@ -1,12 +1,12 @@
 @extends('layouts.admin-app')
 
-@section('title', 'Kelola Testimoni')
-@section('heading', 'Kelola Testimoni')
+@section('title', 'Pesan Testimoni')
+@section('heading', 'Pesan Testimoni')
 
 @section('content')
     <div class="mb-6 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
         <div>
-            <h2 class="text-2xl font-extrabold tracking-tight text-heading">Testimoni Masuk</h2>
+            <h2 class="text-2xl font-extrabold tracking-tight text-heading">Pesan Testimoni Masuk</h2>
             <p class="mt-1 text-sm text-on-surface-variant">Lihat pesan yang dikirim pengunjung, sembunyikan, atau hapus bila tidak sesuai.</p>
         </div>
         <span class="rounded-full border border-surface-highest bg-surface-container px-3 py-1.5 font-mono text-[11px] text-on-surface-variant">{{ $testimonies->count() }} dari {{ $total }} testimoni</span>
@@ -17,7 +17,7 @@
             href="{{ route('admin.testimonies.index') }}"
             @class([
                 'rounded-full border px-4 py-2 text-xs font-semibold transition-colors',
-                'border-blue-500/40 bg-blue-600 text-white shadow-md shadow-blue-600/20' => $activeRole === null,
+                'border-orange-500/40 bg-orange-600 text-white shadow-md shadow-orange-600/20' => $activeRole === null,
                 'border-surface-highest bg-surface-low text-on-surface-variant hover:text-heading' => $activeRole !== null,
             ])
         >Semua</a>
@@ -26,14 +26,14 @@
                 href="{{ route('admin.testimonies.index', ['role' => $role->value]) }}"
                 @class([
                     'rounded-full border px-4 py-2 text-xs font-semibold transition-colors',
-                    'border-blue-500/40 bg-blue-600 text-white shadow-md shadow-blue-600/20' => $activeRole === $role,
+                    'border-orange-500/40 bg-orange-600 text-white shadow-md shadow-orange-600/20' => $activeRole === $role,
                     'border-surface-highest bg-surface-low text-on-surface-variant hover:text-heading' => $activeRole !== $role,
                 ])
             >{{ $role->label() }}</a>
         @endforeach
     </div>
 
-    <div class="overflow-hidden rounded-2xl border border-surface-highest bg-surface-low shadow-card-dark">
+    <div class="overflow-hidden rounded-lg border border-surface-highest bg-surface-low shadow-sm">
         <div class="overflow-x-auto">
             <table class="w-full min-w-[900px] border-collapse text-left text-sm">
                 <thead>
@@ -56,7 +56,7 @@
                             <td class="px-4 py-4 text-center font-mono text-xs text-outline">{{ $loop->iteration }}</td>
                             <td class="px-4 py-4">
                                 <div class="flex items-center gap-2.5">
-                                    <span class="flex size-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-tr from-blue-600 to-indigo-600 font-mono text-[10px] font-bold text-white">{{ $testimony->initials }}</span>
+                                    <span class="flex size-8 shrink-0 items-center justify-center border border-orange-700/30 bg-orange-700/10 font-mono text-[10px] font-bold text-orange-900 dark:text-orange-300">{{ $testimony->initials }}</span>
                                     <span class="font-semibold text-heading">{{ $testimony->name }}</span>
                                 </div>
                             </td>
@@ -97,7 +97,7 @@
                     @empty
                         <tr>
                             <td colspan="7" class="px-4 py-14 text-center">
-                                <div class="mx-auto mb-3 flex size-14 items-center justify-center rounded-2xl border border-surface-highest bg-surface-high text-blue-500">
+                                <div class="mx-auto mb-3 flex size-14 items-center justify-center rounded-lg border border-surface-highest bg-surface-high text-orange-500">
                                     <x-icon name="quote" class="size-7" />
                                 </div>
                                 <p class="text-sm font-semibold text-heading">Belum ada testimoni masuk.</p>

@@ -1,10 +1,10 @@
 <section class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8" data-purpose="collaboration-cta">
-    <div class="relative overflow-hidden rounded-3xl border border-surface-highest bg-gradient-to-b from-surface-container to-[#0d1527] p-8 text-center shadow-2xl sm:p-12">
-        <div class="pointer-events-none absolute -top-24 left-1/2 h-48 w-96 -translate-x-1/2 rounded-full bg-blue-500/20 blur-[90px]"></div>
+    <div class="relative overflow-hidden rounded-3xl border border-surface-highest bg-gradient-to-b from-surface-container to-[#0d1527] p-8 text-center shadow-sm sm:p-12">
+        <div class="pointer-events-none absolute -top-24 left-1/2 h-48 w-96 -translate-x-1/2 rounded-full bg-orange-500/20 blur-[90px]"></div>
 
         <div class="relative z-10 mx-auto max-w-2xl">
-            <span class="mb-4 inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-950/60 px-3 py-1 font-mono text-xs font-medium text-emerald-400">
-                <span class="size-1.5 animate-pulse rounded-full bg-emerald-400"></span>
+            <span class="mb-4 inline-flex items-center gap-1.5 rounded-full border border-amber-500/30 bg-amber-950/60 px-3 py-1 font-mono text-xs font-medium text-amber-400">
+                <span class="size-1.5 animate-pulse rounded-full bg-amber-400"></span>
                 Ready for New Opportunities
             </span>
             <h3 class="mb-4 text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
@@ -19,7 +19,7 @@
                 @if ($siteProfile->email)
                     <a
                         href="mailto:{{ $siteProfile->email }}"
-                        class="flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-600/30 transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-500"
+                        class="flex items-center gap-2 rounded-full bg-orange-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-600/30 transition-all duration-200 hover:-translate-y-0.5 hover:bg-orange-500"
                     >
                         <x-icon name="mail" class="size-4" />
                         <span>Hubungi Saya</span>

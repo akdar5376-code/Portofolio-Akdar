@@ -70,6 +70,9 @@ Route::prefix('admin')->name('admin.')->group(function (): void {
         Route::delete('certificates/{certificate}', [CertificateController::class, 'destroy'])->name('certificates.destroy');
 
         Route::get('content', [ContentController::class, 'index'])->name('content.index');
+        Route::get('content/skills', [ContentController::class, 'skills'])->name('content.skills');
+        Route::get('content/experiences', [ContentController::class, 'experiences'])->name('content.experiences');
+        Route::get('content/educations', [ContentController::class, 'educations'])->name('content.educations');
 
         Route::post('skills', [SkillController::class, 'store'])->name('skills.store');
         Route::put('skills/{skill}', [SkillController::class, 'update'])->name('skills.update');
