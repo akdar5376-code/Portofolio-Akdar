@@ -13,10 +13,8 @@ it('menampilkan menu header sesuai urutan halaman utama', function (): void {
         'Keahlian',
         'Proyek',
         'Sertifikat',
-        'Pengalaman',
         'Blog',
         'Testimoni',
-        'CV',
         'Hubungi Saya',
     ];
 

@@ -520,6 +520,11 @@
 }
 
 @media print {
+    @page {
+        size: A4 portrait;
+        margin: 8mm;
+    }
+
     [data-purpose='site-navigation-header'],
     footer,
     [data-back-to-top],
@@ -540,5 +545,73 @@
 
     main {
         padding: 0 !important;
+    }
+
+    .cv-print-page {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .cv-document {
+        overflow: visible !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        font-size: 8pt !important;
+        line-height: 1.2 !important;
+    }
+
+    .cv-document > header {
+        padding: 0 0 4mm !important;
+    }
+
+    .cv-document .cv-content-grid {
+        grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr) !important;
+        gap: 5mm !important;
+        padding: 4mm 0 0 !important;
+    }
+
+    .cv-document h1 {
+        font-size: 16pt !important;
+    }
+
+    .cv-document h2 {
+        margin-bottom: 2mm !important;
+        padding-bottom: 1mm !important;
+        font-size: 8.5pt !important;
+    }
+
+    .cv-document p,
+    .cv-document span,
+    .cv-document a {
+        font-size: 7.5pt !important;
+        line-height: 1.2 !important;
+    }
+
+    .cv-document .space-y-8 > :not(:last-child) {
+        margin-block-end: 3mm !important;
+    }
+
+    .cv-document .space-y-3 > :not(:last-child),
+    .cv-document .space-y-2\.5 > :not(:last-child) {
+        margin-block-end: 1.5mm !important;
+    }
+
+    .cv-document aside {
+        display: block !important;
+    }
+
+    .cv-document aside > section {
+        margin-bottom: 3mm !important;
+    }
+
+    .cv-document .print-card {
+        padding-block: 1mm !important;
+    }
+
+    .cv-document .skill-bar-fill {
+        width: var(--bar-target, 100%) !important;
+        animation: none !important;
     }
 }

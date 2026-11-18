@@ -38,13 +38,13 @@ class PortfolioContentSeeder extends Seeder
         }
 
         $skills = [
-            ['name' => 'HTML & CSS', 'type' => SkillType::Hard, 'percentage' => 90, 'icon' => 'code'],
-            ['name' => 'JavaScript', 'type' => SkillType::Hard, 'percentage' => 82, 'icon' => 'zap'],
-            ['name' => 'PHP & Laravel', 'type' => SkillType::Hard, 'percentage' => 85, 'icon' => 'terminal'],
-            ['name' => 'Tailwind CSS', 'type' => SkillType::Hard, 'percentage' => 88, 'icon' => 'palette'],
-            ['name' => 'MySQL', 'type' => SkillType::Hard, 'percentage' => 80, 'icon' => 'database'],
-            ['name' => 'Flutter', 'type' => SkillType::Hard, 'percentage' => 70, 'icon' => 'smartphone'],
-            ['name' => 'Git & GitHub', 'type' => SkillType::Hard, 'percentage' => 84, 'icon' => 'git-branch'],
+            ['name' => 'HTML & CSS', 'type' => SkillType::Hard, 'percentage' => 90, 'icon' => 'html5,css3'],
+            ['name' => 'JavaScript', 'type' => SkillType::Hard, 'percentage' => 82, 'icon' => 'javascript'],
+            ['name' => 'PHP & Laravel', 'type' => SkillType::Hard, 'percentage' => 85, 'icon' => 'php,laravel'],
+            ['name' => 'Tailwind CSS', 'type' => SkillType::Hard, 'percentage' => 88, 'icon' => 'tailwind'],
+            ['name' => 'MySQL', 'type' => SkillType::Hard, 'percentage' => 80, 'icon' => 'mysql'],
+            ['name' => 'Flutter', 'type' => SkillType::Hard, 'percentage' => 70, 'icon' => 'flutter'],
+            ['name' => 'Git & GitHub', 'type' => SkillType::Hard, 'percentage' => 84, 'icon' => 'git,github'],
             ['name' => 'Komunikasi', 'type' => SkillType::Soft, 'percentage' => 88, 'icon' => 'message-circle'],
             ['name' => 'Kerja Sama Tim', 'type' => SkillType::Soft, 'percentage' => 90, 'icon' => 'users'],
             ['name' => 'Manajemen Waktu', 'type' => SkillType::Soft, 'percentage' => 82, 'icon' => 'clock'],

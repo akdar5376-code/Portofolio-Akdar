@@ -27,6 +27,7 @@ Route::get('/blog', [BlogController::class, 'index'])->name('posts.index');
 Route::get('/blog/{post}', [BlogController::class, 'show'])->name('posts.show');
 Route::get('/certificates', [PortfolioController::class, 'certificates'])->name('certificates');
 Route::get('/experience', [PortfolioController::class, 'experience'])->name('experience');
+Route::get('/testimonies/create', [PortfolioController::class, 'createTestimony'])->name('testimonies.create');
 Route::get('/testimonies', [PortfolioController::class, 'testimonies'])->name('testimonies');
 Route::get('/cv', [PortfolioController::class, 'cv'])->name('cv');
 Route::get('/contact', [PortfolioController::class, 'contact'])->name('contact');

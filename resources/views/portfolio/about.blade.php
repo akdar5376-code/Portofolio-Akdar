@@ -17,15 +17,23 @@
                     <span class="flex size-9 items-center justify-center rounded-xl border border-orange-500/30 bg-orange-500/10 text-orange-600 dark:text-orange-300">
                         <x-icon name="user" class="size-4" />
                     </span>
-                    <h2 class="text-lg font-bold text-heading">Biodata Singkat</h2>
+                    <h2 class="text-lg font-bold text-heading">Biodata Lengkap</h2>
                 </div>
                 <p class="text-sm leading-relaxed text-on-surface-variant sm:text-base">
                     {{ $profile->bio ?: 'Belum ada biodata.' }}
                 </p>
 
+                @if ($profile->tagline)
+                    <blockquote class="mt-5 rounded-xl border-l-4 border-orange-500 bg-orange-500/5 px-4 py-3 text-sm font-medium italic leading-relaxed text-heading">
+                        “{{ $profile->tagline }}”
+                    </blockquote>
+                @endif
+
                 <div class="mt-6 grid gap-3 sm:grid-cols-2">
                     @foreach ([
                         ['label' => 'Nama Lengkap', 'value' => $profile->full_name, 'icon' => 'user'],
+                        ['label' => 'Peran', 'value' => $profile->role, 'icon' => 'briefcase'],
+                        ['label' => 'Sekolah', 'value' => config('portfolio.owner.school'), 'icon' => 'home'],
                         ['label' => 'Kelas', 'value' => $profile->class_name, 'icon' => 'graduation-cap'],
                         ['label' => 'Kompetensi Keahlian', 'value' => $profile->competency, 'icon' => 'code'],
                     ] as $item)

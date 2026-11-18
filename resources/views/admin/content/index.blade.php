@@ -44,7 +44,7 @@
                         <x-admin.select label="Jenis" name="type" :options="$skillTypeOptions" :value="$editingSkill?->type?->value ?? \App\Enums\SkillType::Hard->value" required />
                         <x-admin.input label="Persentase" name="percentage" type="number" :value="$editingSkill?->percentage ?? 80" required min="0" max="100" />
                     </div>
-                    <x-admin.input label="Nama Ikon" name="icon" :value="$editingSkill?->icon ?? 'code'" maxlength="50" hint="Opsional" placeholder="code, terminal, database" />
+                    <x-admin.input label="Nama Ikon" name="icon" :value="$editingSkill?->icon ?? 'code'" maxlength="50" hint="" placeholder="" />
 
                     <div class="flex items-center gap-2">
                         <button type="submit" class="flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-xl bg-orange-600 px-4 py-2.5 text-xs font-semibold text-white transition-colors hover:bg-orange-500">
@@ -67,7 +67,7 @@
                     @forelse ($skills as $skill)
                         <div class="flex min-w-0 items-center gap-2 rounded-xl border border-surface-highest bg-surface-container/40 p-3 sm:gap-3">
                             <span class="flex size-9 shrink-0 items-center justify-center rounded-lg {{ $skill->type->barClasses()['badge'] }}">
-                                <x-icon :name="$skill->icon ?: 'code'" class="size-4" />
+                                <x-skill-icons :skill="$skill" />
                             </span>
                             <div class="min-w-0 flex-grow">
                                 <div class="flex items-center justify-between gap-2">

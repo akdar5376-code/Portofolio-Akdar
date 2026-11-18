@@ -194,7 +194,7 @@
         </div>
     </section>
 
-    <section class="relative z-20 mx-auto max-w-7xl border-t border-surface-highest/50 px-4 py-20 sm:px-6 lg:px-8" data-purpose="portfolio-gallery-section" id="portfolio">
+    <section class="relative z-20 mx-auto max-w-7xl scroll-mt-24 border-t border-surface-highest/50 px-4 py-20 sm:px-6 lg:px-8" data-purpose="portfolio-gallery-section" id="portfolio">
 
         <div class="relative z-10 mb-8 max-w-2xl">
             <span class="mb-3 inline-flex items-center gap-2 border-b border-orange-700/40 pb-2 text-xs font-semibold uppercase tracking-widest text-orange-800 dark:text-orange-300">
@@ -207,7 +207,7 @@
 
         <div class="relative z-10 mb-8 flex flex-wrap items-center justify-center gap-2">
             <a
-                href="{{ route('home') }}"
+                href="{{ route('home') }}#portfolio"
                 @class([
                     'rounded-full border px-4 py-2 text-xs font-semibold transition-colors',
                     'border-orange-800 bg-orange-800 text-white' => $activeCategory === null,
@@ -216,7 +216,7 @@
             >Semua</a>
             @foreach ($categories as $category)
                 <a
-                    href="{{ route('home', ['category' => $category]) }}"
+                    href="{{ route('home', ['category' => $category]) }}#portfolio"
                     @class([
                         'rounded-full border px-4 py-2 text-xs font-semibold transition-colors',
                         'border-orange-800 bg-orange-800 text-white' => $activeCategory === $category,
@@ -233,7 +233,7 @@
                 </div>
                 <p class="text-base font-semibold text-heading">Tidak ada proyek yang sesuai kategori ini.</p>
                 <p class="mt-1 text-xs text-on-surface-variant">Coba pilih kategori lain atau lihat seluruh proyek.</p>
-                <a href="{{ route('home') }}" class="mt-5 inline-flex items-center gap-1.5 rounded-lg bg-orange-800 px-4 py-2 text-xs font-semibold text-white">Lihat semua proyek</a>
+                <a href="{{ route('home') }}#portfolio" class="mt-5 inline-flex items-center gap-1.5 rounded-lg bg-orange-800 px-4 py-2 text-xs font-semibold text-white">Lihat semua proyek</a>
             </div>
         @else
             <div class="relative z-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3" data-purpose="projects-list-container">
@@ -250,32 +250,5 @@
             </a>
         </div>
     </section>
-
-    <section class="mx-auto max-w-7xl border-t border-surface-highest/50 px-4 py-20 sm:px-6 lg:px-8" data-purpose="testimonies-preview">
-        <div class="mb-10 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
-            <div class="max-w-xl">
-                <span class="mb-2 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-orange-800 dark:text-orange-300">
-                    <span class="h-px w-6 bg-orange-700"></span>
-                    Testimoni
-                </span>
-                <h2 class="text-2xl font-extrabold tracking-tight text-heading sm:text-3xl">Kata mereka tentang saya</h2>
-                <p class="mt-2 text-sm leading-relaxed text-on-surface-variant">Penilaian dari guru pembimbing, teman, pengguna produk, dan pembimbing di tempat PLK.</p>
-            </div>
-            <a href="{{ route('testimonies') }}#form-testimoni" class="flex items-center gap-1.5 rounded-lg border border-surface-highest bg-surface-low px-4 py-2.5 text-xs font-semibold text-on-surface transition-colors hover:border-orange-700 hover:text-orange-800 dark:hover:text-orange-300">
-                Kirim Testimoni
-                <x-icon name="send" class="size-3.5" />
-            </a>
-        </div>
-
-        @if ($testimonies->isEmpty())
-            <p class="rounded-lg border border-surface-highest bg-surface-low p-6 text-center text-sm text-on-surface-variant">Belum ada testimoni.</p>
-        @else
-            <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-                @foreach ($testimonies as $testimony)
-                    <x-testimony-card :testimony="$testimony" />
-                @endforeach
-            </div>
-        @endif
-    </section>
-    </div>
+</div>
 @endsection

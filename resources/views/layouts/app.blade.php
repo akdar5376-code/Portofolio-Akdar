@@ -68,9 +68,9 @@
             ],
         ],
         [
-            'label' => 'CV',
-            'route' => 'cv',
-            'active' => 'cv',
+            'label' => 'Testimoni',
+            'route' => 'testimonies',
+            'active' => 'testimonies',
             'accent' => [
                 'dot' => 'bg-orange-700',
                 'text' => 'text-orange-800 dark:text-orange-300',

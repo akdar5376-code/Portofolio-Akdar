@@ -35,7 +35,6 @@ class PortfolioController extends Controller
             'activeCategory' => $category,
             'hardSkills' => $skills->where('type', SkillType::Hard)->take(6),
             'softSkills' => $skills->where('type', SkillType::Soft)->take(4),
-            'testimonies' => Testimony::query()->visible()->ordered()->take(4)->get(),
         ]);
     }
 
@@ -119,6 +118,14 @@ class PortfolioController extends Controller
     }
 
     public function testimonies(): View
+    {
+        return view('portfolio.testimonies-list', [
+            'profile' => Profile::current(),
+            'testimonies' => Testimony::query()->visible()->ordered()->get(),
+        ]);
+    }
+
+    public function createTestimony(): View
     {
         return view('portfolio.testimonies', [
             'profile' => Profile::current(),

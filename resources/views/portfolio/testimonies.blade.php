@@ -8,7 +8,14 @@
         badge="Penilaian"
         title="Testimoni"
         description="Kirimkan pesan dan kesanmu melalui formulir berikut."
-    />
+    >
+        <div class="mt-6 flex justify-center">
+            <a href="{{ route('testimonies') }}" class="inline-flex items-center gap-2 rounded-lg border border-surface-highest bg-surface-low px-4 py-2.5 text-xs font-semibold text-on-surface transition-colors hover:border-orange-700 hover:text-orange-800 dark:hover:text-orange-300">
+                <x-icon name="arrow-left" class="size-4" />
+                Lihat Testimoni
+            </a>
+        </div>
+    </x-page-header>
 
     <section id="form-testimoni" class="mx-auto max-w-5xl scroll-mt-24 px-4 py-16 sm:px-6 lg:px-8">
         <div class="rounded-lg border border-surface-highest bg-surface-low p-6 shadow-sm sm:p-8">
@@ -99,4 +106,5 @@
             </form>
         </div>
     </section>
+
 @endsection

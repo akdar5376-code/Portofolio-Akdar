@@ -9,7 +9,7 @@
 <div class="group" data-purpose="skill-bar">
     <div class="mb-2 flex items-center justify-between gap-3">
         <span class="flex items-center gap-2 text-sm font-semibold text-heading">
-            <x-icon :name="$skill->icon ?: 'code'" class="size-4 {{ $accent['text'] }}" />
+            <x-skill-icons :skill="$skill" icon-class="size-4 {{ $accent['text'] }}" />
             {{ $skill->name }}
         </span>
         <span class="font-mono text-xs font-semibold {{ $accent['text'] }}">{{ $skill->percentage }}%</span>

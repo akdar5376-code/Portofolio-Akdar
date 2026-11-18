@@ -12,30 +12,33 @@
             ->implode('');
     @endphp
 
-    <x-page-header
-        badge="Resume"
-        title="CV Digital"
-        description="Ringkasan profil, pendidikan, pengalaman, keahlian, dan sertifikat dalam satu halaman."
-    >
-        <div class="mt-6 flex flex-wrap items-center justify-center gap-2 no-print">
-            <button type="button" onclick="window.print()" class="flex items-center gap-2 rounded-full bg-orange-600 px-5 py-2.5 text-xs font-semibold text-white transition-colors hover:bg-orange-500">
-                <x-icon name="printer" class="size-4" />
-                Cetak / Simpan PDF
-            </button>
-            @if ($profile->cv_url)
-                <a href="{{ $profile->cv_url }}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-full border border-surface-highest bg-surface-low px-5 py-2.5 text-xs font-semibold text-on-surface transition-colors hover:border-orange-500/40">
-                    <x-icon name="download" class="size-4" />
-                    Unduh File CV
+    <div class="no-print">
+        <x-page-header
+            badge="Resume"
+            title="CV Digital"
+            description="Ringkasan profil, pendidikan, pengalaman, keahlian, dan sertifikat dalam satu halaman."
+        >
+            <div class="mt-6 flex flex-wrap items-center justify-center gap-2">
+                @if ($profile->cv_url)
+                    <a href="{{ $profile->cv_url }}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-full bg-orange-600 px-5 py-2.5 text-xs font-semibold text-white transition-colors hover:bg-orange-500">
+                        <x-icon name="download" class="size-4" />
+                        Download CV
+                    </a>
+                @else
+                    <button type="button" onclick="window.print()" class="flex items-center gap-2 rounded-full bg-orange-600 px-5 py-2.5 text-xs font-semibold text-white transition-colors hover:bg-orange-500">
+                        <x-icon name="download" class="size-4" />
+                        Download CV
+                    </button>
+                @endif
+                <a href="{{ route('contact') }}" class="flex items-center gap-2 rounded-full border border-surface-highest bg-surface-low px-5 py-2.5 text-xs font-semibold text-on-surface transition-colors hover:border-amber-500/40">
+                    <x-icon name="mail" class="size-4" />
+                    Hubungi Saya
                 </a>
-            @endif
-            <a href="{{ route('contact') }}" class="flex items-center gap-2 rounded-full border border-surface-highest bg-surface-low px-5 py-2.5 text-xs font-semibold text-on-surface transition-colors hover:border-amber-500/40">
-                <x-icon name="mail" class="size-4" />
-                Hubungi Saya
-            </a>
-        </div>
-    </x-page-header>
+            </div>
+        </x-page-header>
+    </div>
 
-    <section class="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
+    <section class="cv-print-page mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
         <div class="cv-document overflow-hidden border border-stone-200 bg-white text-stone-900 shadow-sm dark:border-stone-700 dark:bg-white dark:text-stone-900">
             <header class="border-b border-stone-300 bg-white p-6 sm:p-8">
                 <div class="flex flex-row-reverse items-start justify-between gap-5">
@@ -88,7 +91,7 @@
                 </div>
             </header>
 
-            <div class="grid gap-7 p-6 sm:p-8">
+            <div class="cv-content-grid grid gap-7 p-6 sm:p-8">
                 <div class="space-y-8">
                     <section>
                         <h2 class="mb-3 flex items-center gap-2 border-b border-surface-highest pb-2 text-sm font-extrabold uppercase tracking-wider text-heading">

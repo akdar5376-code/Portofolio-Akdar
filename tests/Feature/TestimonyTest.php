@@ -55,10 +55,10 @@ it('memvalidasi isian testimoni', function (): void {
         ->assertSessionHasErrors(['name', 'role', 'message']);
 });
 
-it('menampilkan pratinjau testimoni di beranda', function (): void {
+it('menampilkan daftar testimoni di halaman testimoni', function (): void {
     Testimony::factory()->guru()->create(['name' => 'Pak Budi Santoso', 'message' => 'Kerja bagus.']);
 
-    $this->get(route('home'))
+    $this->get(route('testimonies'))
         ->assertOk()
         ->assertSee('Kata mereka tentang saya')
         ->assertSee('Pak Budi Santoso');
