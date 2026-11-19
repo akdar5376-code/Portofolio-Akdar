@@ -14,17 +14,17 @@
 
     <div class="bg-[#f1eee6] text-stone-900 dark:bg-[#171815] dark:text-stone-100">
         <section class="relative overflow-hidden px-4 pb-20 pt-14 sm:px-6 sm:pb-24 sm:pt-20 lg:px-8" id="home" data-purpose="hero-identity-section">
-            <div class="mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-[minmax(0,1.15fr)_minmax(20rem,0.85fr)] lg:gap-20">
-            <div class="relative z-10 min-w-0 text-left">
-                <p class="mb-4 text-sm font-medium text-orange-800 dark:text-orange-300">
+            <div class="mx-auto grid max-w-6xl items-center gap-8 sm:gap-14 lg:grid-cols-[minmax(0,1.15fr)_minmax(20rem,0.85fr)] lg:gap-20">
+            <div class="relative z-10 order-2 min-w-0 text-center lg:order-1 lg:text-left">
+                <p class="mb-3 text-sm font-medium text-orange-800 dark:text-orange-300 sm:mb-4">
                     {{ $profile->role ?: 'Junior Developer' }}
                 </p>
 
-                <h1 class="max-w-3xl text-4xl font-semibold leading-[1.08] tracking-tight text-heading sm:text-5xl md:text-7xl">
+                <h1 class="mx-auto max-w-3xl break-words text-3xl font-semibold leading-[1.08] tracking-tight text-heading sm:text-5xl md:text-7xl lg:mx-0">
                     Halo, saya {{ $profile->full_name }}
                 </h1>
 
-                <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-on-surface-variant">
+                <div class="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-on-surface-variant sm:mt-6 lg:justify-start">
                     @if ($profile->class_name)
                         <span class="inline-flex items-center gap-2">
                             <x-icon name="graduation-cap" class="size-4 text-orange-800 dark:text-orange-300" />
@@ -39,11 +39,11 @@
                     @endif
                 </div>
 
-                <p class="mt-7 max-w-xl text-base leading-8 text-on-surface-variant sm:text-lg">
+                <p class="mx-auto mt-5 max-w-xl text-sm leading-7 text-on-surface-variant sm:mt-7 sm:text-lg sm:leading-8 lg:mx-0">
                     {{ $profile->tagline ?: 'Membangun solusi digital melalui kode yang bersih dan efisien.' }}
                 </p>
 
-                <div class="mt-9 flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap">
+                <div class="mt-7 flex flex-col items-stretch gap-3 sm:mt-9 sm:flex-row sm:flex-wrap sm:items-start">
                     <a
                         href="{{ route('projects.index') }}"
                         class="group flex w-full items-center justify-center gap-2 rounded-md bg-orange-800 px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-orange-900 sm:w-auto dark:bg-orange-300 dark:text-stone-950 dark:hover:bg-orange-200"
@@ -68,7 +68,7 @@
                 </div>
 
                 @if (count($profile->social_links))
-                    <div class="mt-8 flex items-center gap-2">
+                    <div class="mt-8 flex items-center justify-center gap-2 lg:justify-start">
                         @foreach ($profile->social_links as $social)
                             <a
                                 href="{{ $social['url'] }}"
@@ -84,7 +84,7 @@
                 @endif
             </div>
 
-            <div class="relative z-0 mx-auto w-full max-w-sm pb-14 sm:pb-16 lg:justify-self-end">
+            <div class="relative z-0 order-1 mx-auto w-full max-w-[15rem] pb-12 sm:max-w-sm sm:pb-16 lg:order-2 lg:justify-self-end">
                 <div class="pointer-events-none absolute -inset-8 flex items-center justify-center">
                     <div class="photo-halo size-full max-w-[22rem] rounded-full bg-orange-500/25 blur-3xl"></div>
                 </div>
@@ -112,7 +112,7 @@
                         </div>
                     </div>
 
-                    <div class="photo-badge absolute left-0 top-8 z-20 flex items-center gap-2 rounded-full border border-surface-highest bg-surface-lowest/90 px-3 py-1.5 text-[11px] font-semibold text-on-surface shadow-lg backdrop-blur sm:-left-5">
+                    <div class="photo-badge absolute left-0 top-8 z-20 flex items-center gap-2 rounded-full border border-surface-highest bg-surface-lowest/90 px-2.5 py-1.5 text-[10px] font-semibold text-on-surface shadow-lg backdrop-blur sm:-left-5 sm:px-3 sm:text-[11px]">
                         <span class="relative flex size-2">
                             <span class="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
                             <span class="relative inline-flex size-2 rounded-full bg-emerald-500"></span>
@@ -120,7 +120,7 @@
                         Open to Projects
                     </div>
 
-                    <div class="photo-badge absolute right-0 top-28 z-20 flex items-center gap-1.5 rounded-full border border-surface-highest bg-surface-lowest/90 px-3 py-1.5 font-mono text-[10px] font-bold text-orange-800 shadow-lg backdrop-blur sm:-right-4 dark:text-orange-300" style="animation-delay: -2.2s">
+                    <div class="photo-badge absolute right-0 top-28 z-20 flex max-w-[65%] items-center gap-1.5 rounded-full border border-surface-highest bg-surface-lowest/90 px-2.5 py-1.5 font-mono text-[9px] font-bold text-orange-800 shadow-lg backdrop-blur sm:-right-4 sm:px-3 sm:text-[10px] dark:text-orange-300" style="animation-delay: -2.2s">
                         <x-icon name="graduation-cap" class="size-3.5" />
                         {{ $profile->class_name ?: 'RPL' }}
                     </div>

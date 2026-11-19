@@ -11,7 +11,7 @@
     />
 
     <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div class="grid gap-6 lg:grid-cols-[1.35fr_0.65fr]">
+        <div class="grid items-start gap-6 lg:grid-cols-[1.35fr_0.65fr]">
             <div class="rounded-lg border border-surface-highest bg-surface-low p-6 shadow-sm sm:p-8">
                 <div class="mb-4 flex items-center gap-2">
                     <span class="flex size-9 items-center justify-center rounded-xl border border-orange-500/30 bg-orange-500/10 text-orange-600 dark:text-orange-300">
@@ -65,6 +65,30 @@
             </div>
 
             <div class="space-y-6">
+                <div class="overflow-hidden rounded-lg border border-surface-highest bg-surface-low shadow-sm">
+                    <div class="relative mx-auto aspect-[4/5] max-h-[28rem] w-full max-w-sm overflow-hidden bg-surface-container">
+                        @if ($profile->avatar_url)
+                            <img src="{{ $profile->avatar_url }}" alt="Foto profil {{ $profile->full_name }}" class="h-full w-full object-cover object-top">
+                        @else
+                            <div class="flex h-full items-center justify-center bg-gradient-to-br from-orange-500/10 via-surface-container to-amber-500/10">
+                                <x-icon name="user" class="size-24 text-outline/60" />
+                            </div>
+                        @endif
+                        <div class="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/40 to-transparent"></div>
+                    </div>
+                    <div class="flex items-center justify-between gap-3 px-5 py-4">
+                        <div class="min-w-0">
+                            <p class="truncate text-base font-bold text-heading">{{ $profile->full_name }}</p>
+                            @if ($profile->role)
+                                <p class="mt-0.5 truncate text-sm text-on-surface-variant">{{ $profile->role }}</p>
+                            @endif
+                        </div>
+                        <span class="flex size-10 shrink-0 items-center justify-center rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-600 dark:text-orange-300">
+                            <x-icon name="user" class="size-4" />
+                        </span>
+                    </div>
+                </div>
+
                 <div class="rounded-lg border border-surface-highest bg-surface-low p-6 shadow-sm">
                     <div class="mb-3 flex items-center gap-2">
                         <span class="flex size-9 items-center justify-center rounded-xl border border-amber-500/30 bg-amber-500/10 text-amber-600 dark:text-amber-300">

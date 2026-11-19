@@ -2,7 +2,7 @@
     method="POST"
     action="{{ $editing ? route('admin.projects.update', $editing) : route('admin.projects.store') }}"
     enctype="multipart/form-data"
-    class="space-y-4"
+    class="min-w-0 space-y-4"
 >
     @csrf
     @if ($editing)
@@ -63,7 +63,7 @@
 
     <x-admin.checkbox label="Tandai sebagai proyek unggulan" name="is_featured" :checked="$editing?->is_featured" />
 
-    <details class="rounded-xl border border-surface-highest bg-surface-container/30 p-4" open>
+    <details class="rounded-xl border border-surface-highest bg-surface-container/30 p-3 sm:p-4">
         <summary class="cursor-pointer text-xs font-bold uppercase tracking-wider text-on-surface-variant">Detail &amp; Dokumentasi Proyek</summary>
         <div class="mt-4 space-y-4">
             <x-admin.textarea label="Detail Proyek" name="detail" :value="$editing?->detail" :rows="4" maxlength="5000" placeholder="Ceritakan gambaran lengkap proyek." />

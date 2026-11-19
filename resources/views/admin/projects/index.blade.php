@@ -8,7 +8,7 @@
 
     <div class="mb-6 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
         <div>
-            <h2 class="text-2xl font-extrabold tracking-tight text-heading">Galeri Proyek</h2>
+            <h2 class="text-xl font-extrabold tracking-tight text-heading sm:text-2xl">Galeri Proyek</h2>
             <p class="mt-1 text-sm text-on-surface-variant">Tambah, ubah, dan hapus proyek yang tampil di galeri publik.</p>
         </div>
         @if ($editing)
@@ -34,8 +34,8 @@
         </div>
     </div>
 
-    <div class="grid items-start gap-6 xl:grid-cols-[minmax(0,460px)_1fr]">
-        <section id="form" class="rounded-lg border border-surface-highest bg-surface-low p-5 shadow-sm sm:p-6">
+    <div class="grid min-w-0 items-start gap-4 sm:gap-6 xl:grid-cols-[minmax(0,460px)_1fr]">
+        <section id="form" class="min-w-0 rounded-lg border border-surface-highest bg-surface-low p-4 shadow-sm sm:p-6">
             <div class="mb-5 flex items-center justify-between border-b border-surface-highest pb-4">
                 <div>
                     <h2 class="flex items-center gap-2 text-base font-bold text-heading">
@@ -49,7 +49,7 @@
             @include('admin.projects.partials.form')
         </section>
 
-        <section class="rounded-lg border border-surface-highest bg-surface-low p-5 shadow-sm sm:p-6">
+        <section class="min-w-0 rounded-lg border border-surface-highest bg-surface-low p-4 shadow-sm sm:p-6">
             <div class="mb-4 flex items-center justify-between">
                 <h2 class="flex items-center gap-2 text-base font-bold text-heading">
                     <x-icon name="layers" class="size-4 text-orange-500" />

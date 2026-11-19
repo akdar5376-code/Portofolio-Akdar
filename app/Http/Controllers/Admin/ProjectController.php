@@ -42,7 +42,15 @@ class ProjectController extends Controller
         $data['sort_order'] = (int) Project::query()->max('sort_order') + 1;
 
         if ($request->hasFile('thumbnail')) {
-            $data['thumbnail_path'] = $request->file('thumbnail')->store('projects', 'public');
+            $thumbnailPath = $request->file('thumbnail')->store('projects', 'public');
+
+            if (! $thumbnailPath) {
+                return back()
+                    ->withErrors(['thumbnail' => 'Gambar proyek gagal disimpan. Silakan coba lagi.'])
+                    ->withInput();
+            }
+
+            $data['thumbnail_path'] = $thumbnailPath;
         }
 
         Project::query()->create($data);
@@ -60,15 +68,29 @@ class ProjectController extends Controller
         $data['category'] = trim((string) ($data['category'] ?? '')) ?: null;
         $data['is_featured'] = $request->boolean('is_featured');
 
+        $oldThumbnailPath = null;
+
         if ($request->hasFile('thumbnail')) {
-            $this->deleteThumbnail($project);
-            $data['thumbnail_path'] = $request->file('thumbnail')->store('projects', 'public');
+            $thumbnailPath = $request->file('thumbnail')->store('projects', 'public');
+
+            if (! $thumbnailPath) {
+                return back()
+                    ->withErrors(['thumbnail' => 'Gambar proyek gagal disimpan. Silakan coba lagi.'])
+                    ->withInput();
+            }
+
+            $oldThumbnailPath = $project->thumbnail_path;
+            $data['thumbnail_path'] = $thumbnailPath;
         } elseif ($request->boolean('remove_thumbnail')) {
             $this->deleteThumbnail($project);
             $data['thumbnail_path'] = null;
         }
 
         $project->update($data);
+
+        if (filled($oldThumbnailPath)) {
+            Storage::disk('public')->delete($oldThumbnailPath);
+        }
 
         return back()
             ->with('status', "{$project->title} berhasil diperbarui.")

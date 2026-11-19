@@ -7,7 +7,7 @@
     @php($accent = $post->category->accentClasses())
     @php($publishedAt = $post->published_at ?? $post->created_at)
 
-    <section class="border-b border-surface-highest px-4 py-10 sm:px-6 lg:px-8">
+    <section class="border-b border-surface-highest px-4 py-7 sm:px-6 sm:py-10 lg:px-8">
         <div class="mx-auto max-w-5xl">
             <nav class="mb-6 flex flex-wrap items-center gap-1.5 font-mono text-[11px] text-outline" aria-label="Breadcrumb">
                 <a href="{{ route('home') }}" class="hover:text-orange-600 dark:hover:text-orange-300">Beranda</a>
@@ -23,7 +23,7 @@
                     {{ $post->category->label() }}
                 </span>
 
-                <h1 class="text-3xl font-semibold leading-tight tracking-tight text-heading sm:text-4xl">{{ $post->title }}</h1>
+                <h1 class="break-words text-2xl font-semibold leading-tight tracking-tight text-heading sm:text-4xl">{{ $post->title }}</h1>
 
                 @if ($post->excerpt)
                     <p class="mt-4 max-w-2xl text-sm leading-relaxed text-on-surface-variant sm:text-base">{{ $post->excerpt }}</p>
@@ -45,7 +45,7 @@
                 </div>
             </div>
 
-            <div class="mt-10 max-w-4xl">
+            <div class="mt-7 max-w-4xl sm:mt-10">
                 <div class="overflow-hidden border-y border-surface-highest bg-surface-low">
                     <img src="{{ $post->cover_url }}" alt="Sampul artikel {{ $post->title }}" class="aspect-video w-full object-cover">
                 </div>
@@ -53,10 +53,10 @@
         </div>
     </section>
 
-    <section class="mx-auto max-w-5xl px-4 py-14 sm:px-6 lg:px-8">
-        <div class="grid gap-6 lg:grid-cols-[1fr_280px]">
-            <div class="space-y-6">
-                <article class="blog-content rounded-lg border border-surface-highest bg-surface-low p-6 shadow-sm sm:p-8">
+    <section class="mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-14 lg:px-8">
+        <div class="grid min-w-0 gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
+            <div class="min-w-0 space-y-6">
+                <article class="blog-content min-w-0 max-w-full rounded-lg border border-surface-highest bg-surface-low p-4 shadow-sm sm:p-8">
                     {!! $post->body_html !!}
                 </article>
 
